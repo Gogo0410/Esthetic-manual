@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -152,15 +151,12 @@
             color: var(--text-dark);
         }
 
-        /* ▼▼▼ ここから画像表示用のスタイルを修正 ▼▼▼ */
         .image-wrapper {
-            margin: 24px 0; /* 上下の余白を調整 */
-            border-radius: 12px; /* 角丸を少し大きく */
+            margin: 24px 0;
+            border-radius: 12px;
             overflow: hidden;
             border: 1px solid var(--border-color);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* 影を調整 */
-            
-            /* 高さを固定し、背景色を指定 */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             height: 250px; 
             background-color: var(--background-light);
         }
@@ -169,12 +165,16 @@
             width: 100%;
             height: 100%;
             display: block;
-            /* 縦横比を維持しつつ、コンテナを完全に覆う (重要) */
             object-fit: cover; 
-            /* 表示する画像の中心を指定 */
-            object-position: center; 
+            object-position: center; /* デフォルトは中央表示 */
         }
-        /* ▲▲▲ ここまで画像表示用のスタイルを修正 ▲▲▲ */
+
+        /* ▼▼▼【変更点1】このクラスを追加しました ▼▼▼ */
+        /* 画像の下部を優先して表示するためのクラス */
+        .manual-image.focus-bottom {
+            object-position: center bottom; /* 水平:中央、垂直:下端 */
+        }
+        /* ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲ */
         
         .action-item {
             background: var(--background-light);
@@ -338,7 +338,8 @@
             <div class="step" data-step="2">
                 <div class="step-header">📱 Step 1: 請求書タブに移動</div>
                 <div class="image-wrapper">
-                    <img src="IMG_0072.jpg" alt="Step 1: 請求書タブの画面" class="manual-image">
+                    <!-- ▼▼▼【変更点2】ここに "focus-bottom" クラスを追加しました ▼▼▼ -->
+                    <img src="https://via.placeholder.com/400x250/007AFF/FFFFFF?text=Step1%E3%81%AE%E7%94%BB%E9%9D%A2" alt="Step 1: 請求書タブの画面" class="manual-image focus-bottom">
                 </div>
                 <div class="action-item"><div class="action-number">1</div><div>アプリを開くと最初は<strong>「お会計」タブ</strong>にいます</div></div>
                 <div class="action-item"><div class="action-number">2</div><div>下部メニューの<strong>「請求書」</strong>をタップ</div></div>
@@ -348,7 +349,7 @@
             <div class="step" data-step="3">
                 <div class="step-header">➕ Step 2: 新規請求書作成</div>
                 <div class="image-wrapper">
-                    <img src="IMG_0073.jpg" alt="Step 2: 新規請求書作成の画面" class="manual-image">
+                    <img src="https://via.placeholder.com/400x250/007AFF/FFFFFF?text=Step2%E3%81%AE%E7%94%BB%E9%9D%A2" alt="Step 2: 新規請求書作成の画面" class="manual-image">
                 </div>
                 <div class="action-item"><div class="action-number">1</div><div>画面左上の<strong>青い「＋」ボタン</strong>をタップ</div></div>
                 <div class="action-item"><div class="action-number">2</div><div>新規請求書画面が表示される</div></div>
@@ -358,7 +359,7 @@
             <div class="step" data-step="4">
                 <div class="step-header">👤 Step 3: 顧客情報を追加</div>
                 <div class="image-wrapper">
-                    <img src="IMG_0074.jpg" alt="Step 3: 顧客情報を追加の画面" class="manual-image">
+                    <img src="https://via.placeholder.com/400x250/007AFF/FFFFFF?text=Step3%E3%81%AE%E7%94%BB%E9%9D%A2" alt="Step 3: 顧客情報を追加の画面" class="manual-image">
                 </div>
                 <div class="action-item"><div class="action-number">1</div><div><strong>「顧客情報を追加」</strong>をタップ</div></div>
                 <div class="action-item"><div class="action-number">2</div><div>右上の<strong>「顧客情報を作成」</strong>をタップ</div></div>
@@ -373,7 +374,7 @@
             <div class="step" data-step="5">
                 <div class="step-header">🛍️ Step 4: 商品・サービス選択</div>
                 <div class="image-wrapper">
-                    <img src="IMG_0075.jpg" alt="Step 4: 商品選択の画面" class="manual-image">
+                    <img src="https://via.placeholder.com/400x250/007AFF/FFFFFF?text=Step4%E3%81%AE%E7%94%BB%E9%9D%A2" alt="Step 4: 商品選択の画面" class="manual-image">
                 </div>
                 <div class="action-item"><div class="action-number">1</div><div><strong>「商品またはディスカウントを追加」</strong>をタップ</div></div>
                 <div class="action-item"><div class="action-number">2</div><div><strong>「すべての商品とサービス」</strong>から該当する<strong>サブスクリプション</strong>を選ぶ</div></div>
@@ -383,7 +384,7 @@
             <div class="step" data-step="6">
                 <div class="step-header">🔄 Step 5: 定期送信設定</div>
                 <div class="image-wrapper">
-                    <img src="IMG_0076.jpg" alt="Step 5: 定期送信設定の画面" class="manual-image">
+                    <img src="https://via.placeholder.com/400x250/007AFF/FFFFFF?text=Step5%E3%81%AE%E7%94%BB%E9%9D%A2" alt="Step 5: 定期送信設定の画面" class="manual-image">
                 </div>
                 <div class="action-item"><div class="action-number">1</div><div><strong>「この請求書を定期送信にする」</strong>をタップしてONにする</div></div>
                 <div class="action-item"><div class="action-number">2</div><div>繰り返しが<strong>「1ヶ月ごと」</strong>になっているか確認</div></div>
@@ -394,7 +395,7 @@
             <div class="step" data-step="7">
                 <div class="step-header">📅 Step 6: 開始日・サービス提供日設定</div>
                 <div class="image-wrapper">
-                    <img src="IMG_0078.jpg" alt="Step 6: 開始日設定の画面" class="manual-image">
+                    <img src="https://via.placeholder.com/400x250/007AFF/FFFFFF?text=Step6%E3%81%AE%E7%94%BB%E9%9D%A2" alt="Step 6: 開始日設定の画面" class="manual-image">
                 </div>
                 <div class="action-item"><div class="action-number">1</div><div><strong>「請求書の支払い期限」</strong>を押して開始日を選択</div></div>
                 <div class="action-item"><div class="action-number">2</div><div><strong>「カスタム」</strong>を選択</div></div>
@@ -408,7 +409,7 @@
             <div class="step" data-step="8">
                 <div class="step-header">✏️ Step 7: 件名・メッセージ設定</div>
                 <div class="image-wrapper">
-                    <img src="IMG_0079.jpg" alt="Step 7: 件名・メッセージ設定の画面" class="manual-image">
+                    <img src="https://via.placeholder.com/400x250/007AFF/FFFFFF?text=Step7%E3%81%AE%E7%94%BB%E9%9D%A2" alt="Step 7: 件名・メッセージ設定の画面" class="manual-image">
                 </div>
                 <div class="action-item"><div class="action-number">1</div><div><strong>「件名なし、任意の請求書IDなし」</strong>ボタンを押す</div></div>
                 <div class="action-item"><div class="action-number">2</div><div>請求書件名に：<strong>「自分の名前＋サブスク○○」</strong>を記載</div></div>
@@ -420,7 +421,7 @@
             <div class="step" data-step="9">
                 <div class="step-header">📤 Step 8: プレビュー確認・送信</div>
                 <div class="image-wrapper">
-                    <img src="IMG_0080.jpg" alt="Step 8: プレビュー・送信の画面" class="manual-image">
+                    <img src="https://via.placeholder.com/400x250/007AFF/FFFFFF?text=Step8%E3%81%AE%E7%94%BB%E9%9D%A2" alt="Step 8: プレビュー・送信の画面" class="manual-image">
                 </div>
                 <div class="action-item"><div class="action-number">1</div><div><strong>「続行」</strong>をタップ</div></div>
                 <div class="action-item"><div class="action-number">2</div><div><strong>「プレビュー」</strong>をタップして内容を確認</div></div>
@@ -432,7 +433,7 @@
             <div class="step" data-step="10">
                 <div class="step-header">📱 Step 9: お客様画面・支払い完了後</div>
                 <div class="image-wrapper">
-                    <img src="IMG_4732 2.PNG" alt="Step 9: お客様の支払いフロー画面" class="manual-image">
+                    <img src="https://via.placeholder.com/400x250/007AFF/FFFFFF?text=Step9%E3%81%AE%E7%94%BB%E9%9D%A2" alt="Step 9: お客様の支払いフロー画面" class="manual-image">
                 </div>
                 <div class="action-item"><div class="action-number">1</div><div><strong>メール通知</strong>：お客様に自動でメール通知が送信される</div></div>
                 <div class="action-item"><div class="action-number">2</div><div><strong>請求書画面</strong>：金額¥19,800、支払い期限、繰り返し設定が表示</div></div>
@@ -445,7 +446,7 @@
             <div class="step" data-step="11">
                 <div class="step-header">🚨 Step 10: 緊急時対応・解約処理</div>
                 <div class="image-wrapper">
-                    <img src="IMG_0081.jpg" alt="Step 10: 緊急時対応の画面" class="manual-image">
+                    <img src="https://via.placeholder.com/400x250/007AFF/FFFFFF?text=Step10%E3%81%AE%E7%94%BB%E9%9D%A2" alt="Step 10: 緊急時対応の画面" class="manual-image">
                 </div>
                 <div class="action-item"><div class="action-number">1</div><div><strong>支払い完了</strong>：お客様が支払うと<span class="status-paid">「支払済み」</span>が表示される</div></div>
                 <div class="action-item"><div class="action-number">2</div><div><strong>未払い確認</strong>：左上のフィルターを<strong>「期限超過」</strong>に設定</div></div>
@@ -466,18 +467,15 @@
     </div>
 
     <script>
-        // === 定数と状態管理 ===
+        // JavaScriptは変更ありません
         const state = {
             currentStepIndex: 1,
-            totalSteps: 11, // 目次を含めた全ステップ数
-            get actualTotalSteps() { return this.totalSteps - 1; }, // 目次を除いた実質的なステップ数
-            get isToc() { return this.currentStepIndex === 1; }, // 現在地が目次か
-            get isLastStep() { return this.currentStepIndex === this.totalSteps; } // 現在地が最終ステップか
+            totalSteps: 11,
+            get actualTotalSteps() { return this.totalSteps - 1; },
+            get isToc() { return this.currentStepIndex === 1; },
+            get isLastStep() { return this.currentStepIndex === this.totalSteps; }
         };
-
         const LOCAL_STORAGE_KEY = 'manualProgress';
-
-        // === DOM要素の取得 ===
         const elements = {
             steps: document.querySelectorAll('.step'),
             progressBar: document.querySelector('.progress-bar'),
@@ -486,17 +484,13 @@
             nextBtn: document.getElementById('nextBtn'),
             stepIndicator: document.getElementById('currentStepIndicator')
         };
-        
-        // === UI更新関数群 ===
         function showCurrentStep() {
             elements.steps.forEach(step => {
                 step.classList.toggle('active', parseInt(step.dataset.step) === state.currentStepIndex);
             });
         }
-        
         function updateNavigation() {
             elements.prevBtn.disabled = state.isToc;
-
             if (state.isLastStep) {
                 elements.nextBtn.textContent = '完了 ✅';
             } else if (state.isToc) {
@@ -505,7 +499,6 @@
                 elements.nextBtn.textContent = '次へ →';
             }
         }
-        
         function updateStepIndicator() {
             if (state.isToc) {
                 elements.stepIndicator.textContent = '目次';
@@ -513,16 +506,13 @@
                 elements.stepIndicator.textContent = `Step ${state.currentStepIndex - 1} / ${state.actualTotalSteps}`;
             }
         }
-
         function updateProgressBar() {
             const progress = state.isToc ? 0 : ((state.currentStepIndex - 1) / state.actualTotalSteps) * 100;
             elements.progressBar.style.width = progress + '%';
         }
-        
         function updateHomeButtonVisibility() {
             elements.homeButton.style.display = state.isToc ? 'none' : 'block';
         }
-
         function updateUI() {
             showCurrentStep();
             updateNavigation();
@@ -531,60 +521,48 @@
             updateHomeButtonVisibility();
             window.scrollTo(0, 0);
         }
-
-        // === イベントハンドラとロジック ===
         function nextStep() {
             if (state.isLastStep) {
-                goToHome(); // 完了したら目次に戻る
+                goToHome();
             } else {
                 state.currentStepIndex++;
                 updateAndSave();
             }
         }
-        
         function previousStep() {
             if (!state.isToc) {
                 state.currentStepIndex--;
                 updateAndSave();
             }
         }
-        
         function jumpToStep(stepNumber) {
             if (stepNumber >= 1 && stepNumber <= state.totalSteps) {
                 state.currentStepIndex = stepNumber;
                 updateAndSave();
             }
         }
-        
         function goToHome() {
             state.currentStepIndex = 1;
             updateAndSave();
         }
-
         function updateAndSave() {
             updateUI();
             saveProgress();
         }
-
-        // === 進捗の保存と復元 ===
         function saveProgress() {
             localStorage.setItem(LOCAL_STORAGE_KEY, state.currentStepIndex);
         }
-        
         function loadProgress() {
             const savedStep = localStorage.getItem(LOCAL_STORAGE_KEY);
             if (savedStep && parseInt(savedStep, 10) > 1) {
                 state.currentStepIndex = parseInt(savedStep, 10);
             }
         }
-
-        // === イベントリスナー ===
         document.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); nextStep(); } 
             else if (e.key === 'ArrowLeft') { e.preventDefault(); previousStep(); } 
             else if (e.key === 'Home' || e.key === 'h') { e.preventDefault(); goToHome(); }
         });
-        
         let touchStartX = 0;
         document.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; });
         document.addEventListener('touchend', e => {
@@ -593,13 +571,10 @@
             if (touchEndX < touchStartX - threshold) { nextStep(); }
             if (touchEndX > touchStartX + threshold) { previousStep(); }
         });
-        
-        // === 初期化処理 ===
         function initialize() {
             loadProgress();
             updateUI();
         }
-
         initialize();
     </script>
 </body>
