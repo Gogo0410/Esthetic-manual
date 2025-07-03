@@ -227,7 +227,6 @@
             line-height: 1.6;
         }
 
-        /* ▼▼▼ 追加したリンク用のスタイル ▼▼▼ */
         .link-item {
             margin: 20px 0;
             padding: 16px;
@@ -245,7 +244,6 @@
         .link-item a:hover {
             text-decoration: underline;
         }
-        /* ▲▲▲ 追加したリンク用のスタイル ▲▲▲ */
 
         .status-paid { color: var(--success-color); font-weight: bold; }
         .status-overdue { color: var(--danger-color); font-weight: bold; }
@@ -338,72 +336,84 @@
         </header>
         
         <main>
-            <!-- 目次 (data-step="1") -->
+            <!-- ▼▼▼ 目次を更新 ▼▼▼ -->
             <div class="step active" data-step="1">
                 <div class="table-of-contents">
                     <div class="toc-header">📋 目次</div>
-                    <div class="toc-item" onclick="jumpToStep(2)"><div class="toc-number">0</div><div class="toc-title">商品の追加</div></div>
-                    <div class="toc-item" onclick="jumpToStep(3)"><div class="toc-number">1</div><div class="toc-title">請求書タブに移動</div></div>
-                    <div class="toc-item" onclick="jumpToStep(4)"><div class="toc-number">2</div><div class="toc-title">新規請求書作成</div></div>
-                    <div class="toc-item" onclick="jumpToStep(5)"><div class="toc-number">3</div><div class="toc-title">顧客情報を追加</div></div>
-                    <div class="toc-item" onclick="jumpToStep(6)"><div class="toc-number">4</div><div class="toc-title">商品・サービス選択</div></div>
-                    <div class="toc-item" onclick="jumpToStep(7)"><div class="toc-number">5</div><div class="toc-title">定期送信設定</div></div>
-                    <div class="toc-item" onclick="jumpToStep(8)"><div class="toc-number">6</div><div class="toc-title">開始日・提供日設定</div></div>
-                    <div class="toc-item" onclick="jumpToStep(9)"><div class="toc-number">7</div><div class="toc-title">件名・メッセージ設定</div></div>
-                    <div class="toc-item" onclick="jumpToStep(10)"><div class="toc-number">8</div><div class="toc-title">プレビュー確認・送信</div></div>
-                    <div class="toc-item" onclick="jumpToStep(11)"><div class="toc-number">9</div><div class="toc-title">お客様画面・支払い完了後</div></div>
-                    <div class="toc-item" onclick="jumpToStep(12)"><div class="toc-number">⚠️</div><div class="toc-title">緊急時対応・解約処理</div></div>
+                    <div class="toc-item" onclick="jumpToStep(2)"><div class="toc-number">1</div><div class="toc-title">アプリのダウンロード</div></div>
+                    <div class="toc-item" onclick="jumpToStep(3)"><div class="toc-number">2</div><div class="toc-title">商品の追加</div></div>
+                    <div class="toc-item" onclick="jumpToStep(4)"><div class="toc-number">3</div><div class="toc-title">請求書タブに移動</div></div>
+                    <div class="toc-item" onclick="jumpToStep(5)"><div class="toc-number">4</div><div class="toc-title">新規請求書作成</div></div>
+                    <div class="toc-item" onclick="jumpToStep(6)"><div class="toc-number">5</div><div class="toc-title">顧客情報を追加</div></div>
+                    <div class="toc-item" onclick="jumpToStep(7)"><div class="toc-number">6</div><div class="toc-title">商品・サービス選択</div></div>
+                    <div class="toc-item" onclick="jumpToStep(8)"><div class="toc-number">7</div><div class="toc-title">定期送信設定</div></div>
+                    <div class="toc-item" onclick="jumpToStep(9)"><div class="toc-number">8</div><div class="toc-title">開始日・提供日設定</div></div>
+                    <div class="toc-item" onclick="jumpToStep(10)"><div class="toc-number">9</div><div class="toc-title">件名・メッセージ設定</div></div>
+                    <div class="toc-item" onclick="jumpToStep(11)"><div class="toc-number">10</div><div class="toc-title">プレビュー確認・送信</div></div>
+                    <div class="toc-item" onclick="jumpToStep(12)"><div class="toc-number">11</div><div class="toc-title">お客様画面・支払い完了後</div></div>
+                    <div class="toc-item" onclick="jumpToStep(13)"><div class="toc-number">⚠️</div><div class="toc-title">緊急時対応・解約処理</div></div>
                 </div>
             </div>
 
-            <!-- Step 0: 商品の追加 (data-step="2") -->
+            <!-- ▼▼▼ ここに新しいスライドを挿入 ▼▼▼ -->
+            <!-- Step 1: アプリのダウンロード (data-step="2") -->
             <div class="step" data-step="2">
-                <div class="step-header">✨ Step 0: 商品の追加</div>
+                <div class="step-header">📱 Step 1: アプリのダウンロード</div>
+                <div class="image-wrapper">
+                    <!-- srcにダウンロードするアプリのアイコン画像などを指定してください -->
+                    <img src="messageImage_1751530497560.jpg" alt="ダウンロードするアプリのアイコン" class="manual-image">
+                </div>
+                <div class="action-item"><div class="action-number">1</div><div>App Store／Google Playを開き、「スクエア」で検索</div></div>
+                <div class="action-item"><div class="action-number">2</div><div>上記画像のアプリをダウンロード</div></div>
+                <div class="action-item"><div class="action-number">3</div><div>ダウンロード完了後、「ログイン」をタップ</div></div>
+                <div class="action-item"><div class="action-number">4</div><div>「端末コード」をオーナー様またはSVから共有してもらう</div></div>
+            </div>
+
+            <!-- ▼▼▼ 以降のスライドのdata-stepを+1して調整 ▼▼▼ -->
+            <!-- Step 2: 商品の追加 (data-step="3") -->
+            <div class="step" data-step="3">
+                <div class="step-header">✨ Step 2: 商品の追加</div>
                 <div class="action-item"><div class="action-number">1</div><div>お会計タブで<strong>「商品」</strong>をタップ</div></div>
                 <div class="action-item"><div class="action-number">2</div><div><strong>「新規商品を登録する」</strong>をタップ</div></div>
                 <div class="action-item"><div class="action-number">3</div><div><strong>「POSレジスタイル」</strong>を選択</div></div>
                 <div class="action-item"><div class="action-number">4</div><div><strong>「ライブラリから選択」</strong>をタップ</div></div>
                 <div class="action-item"><div class="action-number">5</div><div>該当の写真をアップロードまたは選択</div></div>
-                
-                <!-- ▼▼▼ ここにリンクを挿入 ▼▼▼ -->
                 <div class="link-item">
                     <a href="https://drive.google.com/drive/folders/1bdlHH-EaSv1YfAveLyPhSXc9Rz-Ydldl?usp=drive_link" target="_blank" rel="noopener noreferrer">
                         📂 商品写真はこちらからダウンロード
                     </a>
                 </div>
-                <!-- ▲▲▲ ここまで ▲▲▲ -->
-
                 <div class="action-item"><div class="action-number">6</div><div>名前欄にサブスク名を入力（例：サブスクリプション プレミアム会員）</div></div>
                 <div class="action-item"><div class="action-number">7</div><div>説明欄に商品説明を入力（公式LINEの文例を参考に）</div></div>
                 <div class="action-item"><div class="action-number">8</div><div>価格を入力</div></div>
                 <div class="warning"><span class="warning-icon">💡</span>この作業は一度登録すれば、その後は不要です。</div>
             </div>
 
-            <!-- Step 1: 請求書タブへ移動 (data-step="3") -->
-            <div class="step" data-step="3">
-                <div class="step-header">📱 Step 1: 請求書タブに移動</div>
+            <!-- Step 3: 請求書タブへ移動 (data-step="4") -->
+            <div class="step" data-step="4">
+                <div class="step-header">➡️ Step 3: 請求書タブに移動</div>
                 <div class="image-wrapper">
-                    <img src="IMG_0072.jpg" alt="Step 1: 請求書タブの画面" class="manual-image" id="image-step1">
+                    <img src="IMG_0072.jpg" alt="Step 3: 請求書タブの画面" class="manual-image" id="image-step1">
                 </div>
                 <div class="action-item"><div class="action-number">1</div><div>アプリを開くと最初は<strong>「お会計」タブ</strong>にいます</div></div>
                 <div class="action-item"><div class="action-number">2</div><div>下部メニューの<strong>「請求書」</strong>をタップ</div></div>
             </div>
 
-            <!-- Step 2: 新規作成 (data-step="4") -->
-            <div class="step" data-step="4">
-                <div class="step-header">➕ Step 2: 新規請求書作成</div>
+            <!-- Step 4: 新規作成 (data-step="5") -->
+            <div class="step" data-step="5">
+                <div class="step-header">➕ Step 4: 新規請求書作成</div>
                 <div class="image-wrapper">
-                    <img src="IMG_0073.jpg" alt="Step 2: 新規請求書作成の画面" class="manual-image">
+                    <img src="IMG_0073.jpg" alt="Step 4: 新規請求書作成の画面" class="manual-image">
                 </div>
                 <div class="action-item"><div class="action-number">1</div><div>画面左上の<strong>青い「＋」ボタン</strong>をタップ</div></div>
                 <div class="action-item"><div class="action-number">2</div><div>新規請求書画面が表示される</div></div>
             </div>
 
-            <!-- Step 3: 顧客情報追加 (data-step="5") -->
-            <div class="step" data-step="5">
-                <div class="step-header">👤 Step 3: 顧客情報を追加</div>
+            <!-- Step 5: 顧客情報追加 (data-step="6") -->
+            <div class="step" data-step="6">
+                <div class="step-header">👤 Step 5: 顧客情報を追加</div>
                 <div class="image-wrapper">
-                    <img src="IMG_0074.jpg" alt="Step 3: 顧客情報を追加の画面" class="manual-image">
+                    <img src="IMG_0074.jpg" alt="Step 5: 顧客情報を追加の画面" class="manual-image">
                 </div>
                 <div class="action-item"><div class="action-number">1</div><div><strong>「顧客情報を追加」</strong>をタップ</div></div>
                 <div class="action-item"><div class="action-number">2</div><div>右上の<strong>「顧客情報を作成」</strong>をタップ</div></div>
@@ -414,32 +424,32 @@
                 <div class="message-template">（タブレットを渡すorメモに書いてもらって書き写す）</div>
             </div>
 
-            <!-- Step 4: 商品選択 (data-step="6") -->
-            <div class="step" data-step="6">
-                <div class="step-header">🛍️ Step 4: 商品・サービス選択</div>
+            <!-- Step 6: 商品選択 (data-step="7") -->
+            <div class="step" data-step="7">
+                <div class="step-header">🛍️ Step 6: 商品・サービス選択</div>
                 <div class="image-wrapper">
-                    <img src="IMG_0075.jpg" alt="Step 4: 商品選択の画面" class="manual-image">
+                    <img src="IMG_0075.jpg" alt="Step 6: 商品選択の画面" class="manual-image">
                 </div>
                 <div class="action-item"><div class="action-number">1</div><div><strong>「商品またはディスカウントを追加」</strong>をタップ</div></div>
                 <div class="action-item"><div class="action-number">2</div><div><strong>「すべての商品とサービス」</strong>から該当する<strong>サブスクリプション</strong>を選ぶ</div></div>
             </div>
 
-            <!-- Step 5: 定期送信設定 (data-step="7") -->
-            <div class="step" data-step="7">
-                <div class="step-header">🔄 Step 5: 定期送信設定</div>
+            <!-- Step 7: 定期送信設定 (data-step="8") -->
+            <div class="step" data-step="8">
+                <div class="step-header">🔄 Step 7: 定期送信設定</div>
                 <div class="image-wrapper">
-                    <img src="IMG_0076.jpg" alt="Step 5: 定期送信設定の画面" class="manual-image">
+                    <img src="IMG_0076.jpg" alt="Step 7: 定期送信設定の画面" class="manual-image">
                 </div>
                 <div class="action-item"><div class="action-number">1</div><div><strong>「この請求書を定期送信にする」</strong>をタップしてONにする</div></div>
                 <div class="action-item"><div class="action-number">2</div><div>繰り返しが<strong>「1ヶ月ごと」</strong>になっているか確認</div></div>
                 <div class="action-item"><div class="action-number">3</div><div>終了設定：一番下の<strong>「○回の請求後」</strong>を押して<strong>「3」</strong>に設定</div></div>
             </div>
 
-            <!-- Step 6: 開始日・提供日設定 (data-step="8") -->
-            <div class="step" data-step="8">
-                <div class="step-header">📅 Step 6: 開始日・サービス提供日設定</div>
+            <!-- Step 8: 開始日・提供日設定 (data-step="9") -->
+            <div class="step" data-step="9">
+                <div class="step-header">📅 Step 8: 開始日・サービス提供日設定</div>
                 <div class="image-wrapper">
-                    <img src="IMG_0078.jpg" alt="Step 6: 開始日設定の画面" class="manual-image">
+                    <img src="IMG_0078.jpg" alt="Step 8: 開始日設定の画面" class="manual-image">
                 </div>
                 <div class="action-item"><div class="action-number">1</div><div><strong>「請求書の支払い期限」</strong>を押して14日を選択</div></div>
                 <div class="action-item"><div class="action-number">3</div><div><strong>「開始」<strong>で今すぐを選択</div></div>
@@ -448,11 +458,11 @@
                 <div class="action-item"><div class="action-number">5</div><div><strong>自動引き落としをオンにする</strong></div></div>
             </div>
 
-            <!-- Step 7: 件名・メッセージ設定 (data-step="9") -->
-            <div class="step" data-step="9">
-                <div class="step-header">✏️ Step 7: 件名・メッセージ設定</div>
+            <!-- Step 9: 件名・メッセージ設定 (data-step="10") -->
+            <div class="step" data-step="10">
+                <div class="step-header">✏️ Step 9: 件名・メッセージ設定</div>
                 <div class="image-wrapper">
-                    <img src="IMG_0079.jpg" alt="Step 7: 件名・メッセージ設定の画面" class="manual-image">
+                    <img src="IMG_0079.jpg" alt="Step 9: 件名・メッセージ設定の画面" class="manual-image">
                 </div>
                 <div class="action-item"><div class="action-number">1</div><div><strong>「件名なし、任意の請求書IDなし」</strong>ボタンを押す</div></div>
                 <div class="action-item"><div class="action-number">2</div><div>請求書件名に：<strong>「自分の名前＋サブスク○○」</strong>を記載</div></div>
@@ -460,11 +470,11 @@
                 <div class="message-template"><strong>メッセージテンプレート：</strong><br><br>開始から3ヶ月後：○月○日まで有効。サブスクリプションは3ヶ月は解約することができません。3ヶ月後には自動で請求が止まるシステムになっております。クレジットカードの上限等により引き落とせない場合も見られるため、お気をつけください。</div>
             </div>
 
-            <!-- Step 8: プレビュー・送信 (data-step="10") -->
-            <div class="step" data-step="10">
-                <div class="step-header">📤 Step 8: プレビュー確認・送信</div>
+            <!-- Step 10: プレビュー・送信 (data-step="11") -->
+            <div class="step" data-step="11">
+                <div class="step-header">📤 Step 10: プレビュー確認・送信</div>
                 <div class="image-wrapper">
-                    <img src="IMG_0080.jpg" alt="Step 8: プレビュー・送信の画面" class="manual-image">
+                    <img src="IMG_0080.jpg" alt="Step 10: プレビュー・送信の画面" class="manual-image">
                 </div>
                 <div class="action-item"><div class="action-number">1</div><div><strong>「続行」</strong>をタップ</div></div>
                 <div class="action-item"><div class="action-number">2</div><div><strong>「プレビュー」</strong>をタップして内容を確認</div></div>
@@ -472,11 +482,11 @@
                 <div class="action-item"><div class="action-number">4</div><div>問題なければ<strong>「請求書を送信」</strong>をタップ</div></div>
             </div>
 
-            <!-- Step 9: お客様画面・支払い完了後 (data-step="11") -->
-            <div class="step" data-step="11">
-                <div class="step-header">📱 Step 9: お客様画面・支払い完了後</div>
+            <!-- Step 11: お客様画面・支払い完了後 (data-step="12") -->
+            <div class="step" data-step="12">
+                <div class="step-header">📱 Step 11: お客様画面・支払い完了後</div>
                 <div class="image-wrapper">
-                    <img src="IMG_4732 2.PNG" alt="Step 9: お客様の支払いフロー画面" class="manual-image" id="image-step9">
+                    <img src="IMG_4732 2.PNG" alt="Step 11: お客様の支払いフロー画面" class="manual-image" id="image-step9">
                 </div>
                 <div class="action-item"><div class="action-number">1</div><div><strong>メール通知</strong>：お客様に自動でメール通知が送信される</div></div>
                 <div class="action-item"><div class="action-number">2</div><div><strong>請求書画面</strong>：金額¥19,800、支払い期限、繰り返し設定が表示</div></div>
@@ -486,11 +496,11 @@
                  <div class="warning"><span class="warning-icon">⚠️</span>必ず目の前でお客様にカード情報を入力してもらうのを見届けましょう。（）支払いをきちんとしてもらうため</div>
             </div>
 
-            <!-- Step 10: 緊急時対応 (data-step="12") -->
-            <div class="step" data-step="12">
-                <div class="step-header">🚨 Step 10: 緊急時対応・解約処理</div>
+            <!-- Step 12: 緊急時対応 (data-step="13") -->
+            <div class="step" data-step="13">
+                <div class="step-header">🚨 Step 12: 緊急時対応・解約処理</div>
                 <div class="image-wrapper">
-                    <img src="IMG_0081.jpg" alt="Step 10: 緊急時対応の画面" class="manual-image">
+                    <img src="IMG_0081.jpg" alt="Step 12: 緊急時対応の画面" class="manual-image">
                 </div>
                 <div class="action-item"><div class="action-number">1</div><div><strong>支払い完了</strong>：お客様が支払うと<span class="status-paid">「支払済み」</span>が表示される</div></div>
                 <div class="action-item"><div class="action-number">2</div><div><strong>未払い確認</strong>：左上のフィルターを<strong>「期限超過」</strong>に設定</div></div>
@@ -515,8 +525,8 @@
         // === 定数と状態管理 ===
         const state = {
             currentStepIndex: 1,
-            totalSteps: 12, // 目次(1) + Step0〜10(11) = 12ステップ
-            get actualTotalSteps() { return this.totalSteps - 1; }, // 目次を除いた実質ステップ数 (11)
+            totalSteps: 13, // 目次(1) + Step1〜12(12) = 13ステップ
+            get actualTotalSteps() { return this.totalSteps - 1; }, // 目次を除いた実質ステップ数 (12)
             get isToc() { return this.currentStepIndex === 1; },
             get isLastStep() { return this.currentStepIndex === this.totalSteps; }
         };
@@ -556,10 +566,9 @@
             if (state.isToc) {
                 elements.stepIndicator.textContent = '目次';
             } else {
-                // ステップ番号を「0」から始まるように表示 (例: Step 0 / 10)
-                const currentDisplayStep = state.currentStepIndex - 2; // Step 0, 1, 2...
-                const totalDisplaySteps = state.actualTotalSteps - 1;   // 11ステップあるので、0から10の11段階
-                elements.stepIndicator.textContent = `Step ${currentDisplayStep} / ${totalDisplaySteps}`;
+                // Step 1から始まる表示に修正
+                const currentDisplayStep = state.currentStepIndex - 1; // 2 -> 1, 3 -> 2...
+                elements.stepIndicator.textContent = `Step ${currentDisplayStep} / ${state.actualTotalSteps}`;
             }
         }
 
@@ -584,7 +593,7 @@
         // === イベントハンドラとロジック ===
         function nextStep() {
             if (state.isLastStep) {
-                goToHome(); // 完了したら目次に戻る
+                goToHome();
             } else {
                 state.currentStepIndex++;
                 updateAndSave();
