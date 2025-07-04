@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>サブスク契約書作成マニュアル</title>
     <style>
-        /* CSSカスタムプロパティ（変数）を定義し、色の管理を容易に */
         :root {
             --primary-color: #007AFF;
             --primary-color-hover: #0056b3;
@@ -20,310 +19,53 @@
             --success-color: #28a745;
             --danger-color: #dc3545;
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Hiragino Sans', 'Yu Gothic UI', sans-serif;
-            line-height: 1.6;
-            color: var(--text-dark);
-            background: var(--background-light);
-            min-height: 100vh;
-        }
-        
-        .container {
-            max-width: 414px;
-            margin: 0 auto;
-            background: var(--white);
-            min-height: 100vh;
-            position: relative;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        
-        /* === ヘッダー & プログレスバー === */
-        .header {
-            background: var(--primary-color);
-            color: var(--white);
-            padding: 20px;
-            text-align: center;
-        }
-        
-        .header h1 {
-            font-size: 22px;
-            font-weight: bold;
-        }
-        
-        .progress-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 0%;
-            height: 3px;
-            background: var(--primary-color);
-            transition: width 0.3s ease;
-            z-index: 1000;
-        }
-        
-        /* === ステップコンテンツ === */
-        main {
-            padding-bottom: 120px; /* フッター分の余白 */
-        }
-        
-        .step {
-            display: none;
-            padding: 20px;
-            animation: slideIn 0.5s ease;
-        }
-        
-        .step.active {
-            display: block;
-        }
-        
-        @keyframes slideIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .step-header {
-            background: var(--primary-color);
-            color: var(--white);
-            padding: 16px 20px;
-            margin: -20px -20px 24px;
-            text-align: center;
-            font-weight: bold;
-            font-size: 18px;
-        }
-        
-        /* === 各種コンポーネント === */
-        .table-of-contents {
-            background: var(--background-light);
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-        }
-        
-        .toc-header {
-            text-align: center;
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 16px;
-            color: var(--primary-color);
-        }
-        
-        .toc-item {
-            display: flex;
-            align-items: center;
-            padding: 12px 16px;
-            margin: 8px 0;
-            background: var(--white);
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 1px solid var(--border-color);
-        }
-        
-        .toc-item:hover {
-            transform: translateX(4px);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        
-        .toc-number {
-            background: var(--primary-color);
-            color: var(--white);
-            border-radius: 50%;
-            width: 32px;
-            height: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            margin-right: 12px;
-            font-size: 14px;
-            flex-shrink: 0;
-        }
-        
-        .toc-title {
-            font-weight: 500;
-            color: var(--text-dark);
-        }
-
-        .image-wrapper {
-            margin: 24px 0;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            height: 250px; 
-            background-color: var(--background-light);
-        }
-
-        .manual-image {
-            width: 100%;
-            height: 100%;
-            display: block;
-            object-fit: cover; 
-            object-position: center; 
-        }
-
-        #image-step1 {
-            object-position: 35% center;
-        }
-
-        #image-step9 {
-            object-position: center 0%;
-        }
-        
-        .action-item {
-            background: var(--background-light);
-            padding: 12px 16px;
-            border-radius: 8px;
-            margin: 12px 0;
-            display: flex;
-            align-items: center;
-            border-left: 4px solid var(--primary-color);
-        }
-        
-        .action-number {
-            background: var(--primary-color);
-            color: var(--white);
-            border-radius: 50%;
-            width: 28px;
-            height: 28px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            margin-right: 12px;
-            font-size: 14px;
-            flex-shrink: 0;
-        }
-        
-        .warning {
-            background: var(--warning-bg);
-            border: 1px solid var(--warning-border);
-            border-radius: 8px;
-            padding: 16px;
-            margin: 16px 0;
-            border-left: 4px solid var(--warning-color);
-        }
-        
-        .warning-icon {
-            color: var(--warning-color);
-            font-weight: bold;
-            margin-right: 8px;
-        }
-
-        .message-template {
-            background: var(--background-light);
-            border: 1px solid var(--primary-color);
-            border-radius: 8px;
-            padding: 16px;
-            margin: 16px 0;
-            font-size: 14px;
-            line-height: 1.6;
-        }
-
-        .link-item {
-            margin: 20px 0;
-            padding: 16px;
-            background: var(--background-light);
-            border-radius: 8px;
-            text-align: center;
-            border: 1px dashed var(--primary-color);
-        }
-        .link-item a {
-            color: var(--primary-color);
-            font-weight: bold;
-            text-decoration: none;
-            font-size: 16px;
-        }
-        .link-item a:hover {
-            text-decoration: underline;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Hiragino Sans', 'Yu Gothic UI', sans-serif; line-height: 1.6; color: var(--text-dark); background: var(--background-light); min-height: 100vh; }
+        .container { max-width: 414px; margin: 0 auto; background: var(--white); min-height: 100vh; position: relative; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        .header { background: var(--primary-color); color: var(--white); padding: 20px; text-align: center; }
+        .header h1 { font-size: 22px; font-weight: bold; }
+        .progress-bar { position: fixed; top: 0; left: 0; width: 0%; height: 3px; background: var(--primary-color); transition: width 0.3s ease; z-index: 1000; }
+        main { padding-bottom: 120px; }
+        .step { display: none; padding: 20px; animation: slideIn 0.5s ease; }
+        .step.active { display: block; }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .step-header { background: var(--primary-color); color: var(--white); padding: 16px 20px; margin: -20px -20px 24px; text-align: center; font-weight: bold; font-size: 18px; }
+        .table-of-contents { background: var(--background-light); border-radius: 8px; padding: 20px; margin: 20px 0; }
+        .toc-header { text-align: center; font-size: 18px; font-weight: bold; margin-bottom: 16px; color: var(--primary-color); }
+        .toc-item { display: flex; align-items: center; padding: 12px 16px; margin: 8px 0; background: var(--white); border-radius: 8px; cursor: pointer; transition: all 0.3s ease; border: 1px solid var(--border-color); }
+        .toc-item:hover { transform: translateX(4px); box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .toc-number { background: var(--primary-color); color: var(--white); border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 12px; font-size: 14px; flex-shrink: 0; }
+        .toc-title { font-weight: 500; color: var(--text-dark); }
+        .image-wrapper { margin: 24px 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-color); box-shadow: 0 4px 12px rgba(0,0,0,0.1); height: 250px; background-color: var(--background-light); }
+        .manual-image { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center; }
+        #image-step1 { object-position: 35% center; }
+        #image-step9 { object-position: center 0%; }
+        .action-item { background: var(--background-light); padding: 12px 16px; border-radius: 8px; margin: 12px 0; display: flex; align-items: center; border-left: 4px solid var(--primary-color); }
+        .action-number { background: var(--primary-color); color: var(--white); border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 12px; font-size: 14px; flex-shrink: 0; }
+        .warning { background: var(--warning-bg); border: 1px solid var(--warning-border); border-radius: 8px; padding: 16px; margin: 16px 0; border-left: 4px solid var(--warning-color); }
+        .warning-icon { color: var(--warning-color); font-weight: bold; margin-right: 8px; }
+        .message-template { background: var(--background-light); border: 1px solid var(--primary-color); border-radius: 8px; padding: 16px; margin: 16px 0; font-size: 14px; line-height: 1.6; }
+        .link-item { margin: 20px 0; padding: 16px; background: var(--background-light); border-radius: 8px; text-align: center; border: 1px dashed var(--primary-color); }
+        .link-item a { color: var(--primary-color); font-weight: bold; text-decoration: none; font-size: 16px; }
+        .link-item a:hover { text-decoration: underline; }
+        .case-box { border: 1px solid var(--border-color); border-radius: 8px; padding: 16px; margin: 20px 0; background: var(--white); box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .case-header { font-size: 16px; font-weight: bold; padding-bottom: 8px; margin-bottom: 12px; border-bottom: 2px solid var(--border-color); }
+        .case-header.success { color: var(--success-color); border-bottom-color: var(--success-color); }
+        .case-header.danger { color: var(--danger-color); border-bottom-color: var(--danger-color); }
+        .case-box p { margin-bottom: 12px; line-height: 1.7; }
+        .case-box .note { font-size: 13px; color: var(--text-light); margin-top: 8px; }
+        .case-box .note-strong { font-weight: bold; color: var(--danger-color); }
         .status-paid { color: var(--success-color); font-weight: bold; }
         .status-overdue { color: var(--danger-color); font-weight: bold; }
         strong { font-weight: bold; color: var(--text-dark); }
-        
-        /* === ナビゲーション & フッター === */
-        footer.navigation {
-            position: fixed;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            max-width: 414px;
-            width: 100%;
-            background: var(--white);
-            padding: 16px 20px 20px;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-top: 1px solid var(--border-color);
-            z-index: 900;
-        }
-        
-        .nav-btn {
-            background: var(--primary-color);
-            color: var(--white);
-            border: none;
-            padding: 12px 24px;
-            border-radius: 8px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .nav-btn:hover {
-            background: var(--primary-color-hover);
-        }
-        
-        .nav-btn:disabled {
-            background: #ddd;
-            color: #999;
-            cursor: not-allowed;
-            opacity: 0;
-            pointer-events: none;
-        }
-        
-        .step-indicator {
-            color: var(--text-light);
-            font-size: 14px;
-            font-weight: 500;
-        }
-
-        .home-button {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: var(--primary-color);
-            color: var(--white);
-            border: none;
-            border-radius: 12px;
-            padding: 12px 16px;
-            font-size: 14px;
-            font-weight: bold;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            z-index: 999;
-            transition: all 0.3s ease;
-            display: none; /* JSで表示を制御 */
-        }
-        
-        .home-button:hover {
-            transform: scale(1.05);
-            background: var(--primary-color-hover);
-        }
-
-        /* レスポンシブ対応 */
-        @media (max-width: 375px) {
-            .container { max-width: 100%; }
-            .step { padding: 16px; }
-        }
+        footer.navigation { position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); max-width: 414px; width: 100%; background: var(--white); padding: 16px 20px 20px; box-shadow: 0 -2px 10px rgba(0,0,0,0.1); display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color); z-index: 900; }
+        .nav-btn { background: var(--primary-color); color: var(--white); border: none; padding: 12px 24px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: all 0.3s ease; }
+        .nav-btn:hover { background: var(--primary-color-hover); }
+        .nav-btn:disabled { background: #ddd; color: #999; cursor: not-allowed; opacity: 0; pointer-events: none; }
+        .step-indicator { color: var(--text-light); font-size: 14px; font-weight: 500; }
+        .home-button { position: fixed; top: 20px; right: 20px; background: var(--primary-color); color: var(--white); border: none; border-radius: 12px; padding: 12px 16px; font-size: 14px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 999; transition: all 0.3s ease; display: none; }
+        .home-button:hover { transform: scale(1.05); background: var(--primary-color-hover); }
+        @media (max-width: 375px) { .container { max-width: 100%; } .step { padding: 16px; } }
     </style>
 </head>
 <body>
@@ -336,32 +78,46 @@
         </header>
         
         <main>
-            <!-- ▼▼▼ 目次を更新 ▼▼▼ -->
+            <!-- 目次 -->
             <div class="step active" data-step="1">
                 <div class="table-of-contents">
                     <div class="toc-header">📋 目次</div>
-                    <div class="toc-item" onclick="jumpToStep(2)"><div class="toc-number">1</div><div class="toc-title">アプリのダウンロード</div></div>
-                    <div class="toc-item" onclick="jumpToStep(3)"><div class="toc-number">2</div><div class="toc-title">商品の追加</div></div>
-                    <div class="toc-item" onclick="jumpToStep(4)"><div class="toc-number">3</div><div class="toc-title">請求書タブに移動</div></div>
-                    <div class="toc-item" onclick="jumpToStep(5)"><div class="toc-number">4</div><div class="toc-title">新規請求書作成</div></div>
+                    <div class="toc-item" onclick="jumpToStep(2)"><div class="toc-number">1</div><div class="toc-title">サブスクの変更点</div></div>
+                    <div class="toc-item" onclick="jumpToStep(3)"><div class="toc-number">2</div><div class="toc-title">アプリのダウンロード</div></div>
+                    <div class="toc-item" onclick="jumpToStep(4)"><div class="toc-number">3</div><div class="toc-title">商品の追加</div></div>
+                    <div class="toc-item" onclick="jumpToStep(5)"><div class="toc-number">4</div><div class="toc-title">請求書の作成</div></div>
                     <div class="toc-item" onclick="jumpToStep(6)"><div class="toc-number">5</div><div class="toc-title">顧客情報を追加</div></div>
                     <div class="toc-item" onclick="jumpToStep(7)"><div class="toc-number">6</div><div class="toc-title">商品・サービス選択</div></div>
                     <div class="toc-item" onclick="jumpToStep(8)"><div class="toc-number">7</div><div class="toc-title">定期送信設定</div></div>
-                    <div class="toc-item" onclick="jumpToStep(9)"><div class="toc-number">8</div><div class="toc-title">開始日・提供日設定</div></div>
-                    <div class="toc-item" onclick="jumpToStep(10)"><div class="toc-number">9</div><div class="toc-title">件名・メッセージ設定</div></div>
-                    <div class="toc-item" onclick="jumpToStep(11)"><div class="toc-number">10</div><div class="toc-title">プレビュー確認・送信</div></div>
-                    <div class="toc-item" onclick="jumpToStep(12)"><div class="toc-number">11</div><div class="toc-title">お客様画面・支払い完了後</div></div>
-                    <div class="toc-item" onclick="jumpToStep(13)"><div class="toc-number">⚠️</div><div class="toc-title">緊急時対応・解約処理</div></div>
+                    <div class="toc-item" onclick="jumpToStep(9)"><div class="toc-number">8</div><div class="toc-title">開始日・サービス提供日設定</div></div>
+                    <div class="toc-item" onclick="jumpToStep(10)"><div class="toc-number">9</div><div class="toc-title">ご利用開始日のご案内</div></div>
+                    <div class="toc-item" onclick="jumpToStep(11)"><div class="toc-number">10</div><div class="toc-title">件名・メッセージ設定</div></div>
+                    <div class="toc-item" onclick="jumpToStep(12)"><div class="toc-number">11</div><div class="toc-title">プレビュー確認・送信</div></div>
+                    <div class="toc-item" onclick="jumpToStep(13)"><div class="toc-number">12</div><div class="toc-title">お客様画面・支払い完了後</div></div>
+                    <div class="toc-item" onclick="jumpToStep(14)"><div class="toc-number">13</div><div class="toc-title">請求書の編集方法</div></div>
+                    <div class="toc-item" onclick="jumpToStep(15)"><div class="toc-number">⚠️</div><div class="toc-title">緊急時対応・解約処理</div></div>
                 </div>
             </div>
 
-            <!-- ▼▼▼ ここに新しいスライドを挿入 ▼▼▼ -->
-            <!-- Step 1: アプリのダウンロード (data-step="2") -->
+            <!-- Step 1: サブスクの変更点 -->
             <div class="step" data-step="2">
-                <div class="step-header">📱 Step 1: アプリのダウンロード</div>
+                <div class="step-header">📢 Step 1: サブスクの変更点</div>
+                <div class="action-item"><div class="action-number">1</div><div>決済システムをTAKETINから<strong>スクエア</strong>に変更します。</div></div>
+                <div class="action-item"><div class="action-number">2</div><div>注意：スクエアでは<strong>3ヶ月間の有期契約</strong>となります。(TAKETINでは無期契約でした)</div></div>
+                <div class="warning">
+                    <span class="warning-icon">⚠️</span>
+                    <strong>■スクエア決済時のサブスク開始日について（TAKETINとの違い）</strong><br><br>
+                    <strong>TAKETIN：</strong>カード登録後、14日後に決済が行われていた<br>
+                    <strong>スクエア：</strong>カード登録と【同時】に<strong class="status-overdue">その日に決済されます</strong><br>
+                    <small>※この仕様の違いにより、お客様へのご案内が重要になります。</small>
+                </div>
+            </div>
+
+            <!-- Step 2 (旧1): アプリのダウンロード -->
+            <div class="step" data-step="3">
+                <div class="step-header">📱 Step 2: アプリのダウンロード</div>
                 <div class="image-wrapper">
-                    <!-- srcにダウンロードするアプリのアイコン画像などを指定してください -->
-                    <img src="messageImage_1751530497560.jpg" alt="ダウンロードするアプリのアイコン" class="manual-image">
+                    <img src="your-app-icon-image.jpg" alt="ダウンロードするアプリのアイコン" class="manual-image">
                 </div>
                 <div class="action-item"><div class="action-number">1</div><div>App Store／Google Playを開き、「スクエア」で検索</div></div>
                 <div class="action-item"><div class="action-number">2</div><div>上記画像のアプリをダウンロード</div></div>
@@ -369,10 +125,9 @@
                 <div class="action-item"><div class="action-number">4</div><div>「端末コード」をオーナー様またはSVから共有してもらう</div></div>
             </div>
 
-            <!-- ▼▼▼ 以降のスライドのdata-stepを+1して調整 ▼▼▼ -->
-            <!-- Step 2: 商品の追加 (data-step="3") -->
-            <div class="step" data-step="3">
-                <div class="step-header">✨ Step 2: 商品の追加</div>
+            <!-- Step 3 (旧2): 商品の追加 -->
+            <div class="step" data-step="4">
+                <div class="step-header">✨ Step 3: 商品の追加</div>
                 <div class="action-item"><div class="action-number">1</div><div>お会計タブで<strong>「商品」</strong>をタップ</div></div>
                 <div class="action-item"><div class="action-number">2</div><div><strong>「新規商品を登録する」</strong>をタップ</div></div>
                 <div class="action-item"><div class="action-number">3</div><div><strong>「POSレジスタイル」</strong>を選択</div></div>
@@ -389,42 +144,28 @@
                 <div class="warning"><span class="warning-icon">💡</span>この作業は一度登録すれば、その後は不要です。</div>
             </div>
 
-            <!-- Step 3: 請求書タブへ移動 (data-step="4") -->
-            <div class="step" data-step="4">
-                <div class="step-header">➡️ Step 3: 請求書タブに移動</div>
-                <div class="image-wrapper">
-                    <img src="IMG_0072.jpg" alt="Step 3: 請求書タブの画面" class="manual-image" id="image-step1">
-                </div>
-                <div class="action-item"><div class="action-number">1</div><div>アプリを開くと最初は<strong>「お会計」タブ</strong>にいます</div></div>
-                <div class="action-item"><div class="action-number">2</div><div>下部メニューの<strong>「請求書」</strong>をタップ</div></div>
-            </div>
-
-            <!-- Step 4: 新規作成 (data-step="5") -->
+            <!-- Step 4 (旧3): 請求書の作成 -->
             <div class="step" data-step="5">
-                <div class="step-header">➕ Step 4: 新規請求書作成</div>
+                <div class="step-header">➕ Step 4: 請求書の作成</div>
                 <div class="image-wrapper">
                     <img src="IMG_0073.jpg" alt="Step 4: 新規請求書作成の画面" class="manual-image">
                 </div>
-                <div class="action-item"><div class="action-number">1</div><div>画面左上の<strong>青い「＋」ボタン</strong>をタップ</div></div>
-                <div class="action-item"><div class="action-number">2</div><div>新規請求書画面が表示される</div></div>
+                <div class="action-item"><div class="action-number">1</div><div>下部メニューの<strong>「請求書」</strong>をタップ</div></div>
+                <div class="action-item"><div class="action-number">2</div><div>画面左上の<strong>青い「＋」ボタン</strong>をタップして新規作成</div></div>
             </div>
 
-            <!-- Step 5: 顧客情報追加 (data-step="6") -->
+            <!-- Step 5 (旧4): 顧客情報追加 -->
             <div class="step" data-step="6">
                 <div class="step-header">👤 Step 5: 顧客情報を追加</div>
                 <div class="image-wrapper">
                     <img src="IMG_0074.jpg" alt="Step 5: 顧客情報を追加の画面" class="manual-image">
                 </div>
-                <div class="action-item"><div class="action-number">1</div><div><strong>「顧客情報を追加」</strong>をタップ</div></div>
-                <div class="action-item"><div class="action-number">2</div><div>右上の<strong>「顧客情報を作成」</strong>をタップ</div></div>
-                <div class="action-item"><div class="action-number">3</div><div>お客様の<strong>姓名</strong>を入力</div></div>
-                <div class="action-item"><div class="action-number">4</div><div><strong>電話番号</strong>を入力</div></div>
-                <div class="action-item"><div class="action-number">5</div><div><strong>メールアドレス</strong>を正確に入力</div></div>
-                <div class="action-item"><div class="action-number">6</div><div><strong>「保存」</strong>をタップ</div></div>
-                <div class="message-template">（タブレットを渡すorメモに書いてもらって書き写す）</div>
+                <div class="action-item"><div class="action-number">1</div><div><strong>「顧客情報を追加」</strong>をタップし、お客様にiPadを渡す</div></div>
+                <div class="action-item"><div class="action-number">2</div><div>お客様に<strong>姓名、電話番号、メールアドレス</strong>を正確に入力してもらう</div></div>
+                <div class="action-item"><div class="action-number">3</div><div>入力完了後、iPadを受け取り<strong>「保存」</strong>をタップする</div></div>
             </div>
 
-            <!-- Step 6: 商品選択 (data-step="7") -->
+            <!-- Step 6 (旧5): 商品選択 -->
             <div class="step" data-step="7">
                 <div class="step-header">🛍️ Step 6: 商品・サービス選択</div>
                 <div class="image-wrapper">
@@ -434,7 +175,7 @@
                 <div class="action-item"><div class="action-number">2</div><div><strong>「すべての商品とサービス」</strong>から該当する<strong>サブスクリプション</strong>を選ぶ</div></div>
             </div>
 
-            <!-- Step 7: 定期送信設定 (data-step="8") -->
+            <!-- Step 7 (旧6): 定期送信設定 -->
             <div class="step" data-step="8">
                 <div class="step-header">🔄 Step 7: 定期送信設定</div>
                 <div class="image-wrapper">
@@ -442,27 +183,51 @@
                 </div>
                 <div class="action-item"><div class="action-number">1</div><div><strong>「この請求書を定期送信にする」</strong>をタップしてONにする</div></div>
                 <div class="action-item"><div class="action-number">2</div><div>繰り返しが<strong>「1ヶ月ごと」</strong>になっているか確認</div></div>
-                <div class="action-item"><div class="action-number">3</div><div>終了設定：一番下の<strong>「○回の請求後」</strong>を押して<strong>「3」</strong>に設定</div></div>
+                <div class="action-item"><div class="action-number">3</div><div>終了設定：一番下の<strong>「#回の請求後」</strong>を押して<strong>「3」</strong>に設定</div></div>
             </div>
 
-            <!-- Step 8: 開始日・提供日設定 (data-step="9") -->
+            <!-- Step 8 (旧7): 開始日・サービス提供日設定 -->
             <div class="step" data-step="9">
                 <div class="step-header">📅 Step 8: 開始日・サービス提供日設定</div>
                 <div class="image-wrapper">
                     <img src="IMG_0078.jpg" alt="Step 8: 開始日設定の画面" class="manual-image">
                 </div>
-                <div class="action-item"><div class="action-number">1</div><div><strong>「請求書の支払い期限」</strong>を押して14日を選択</div></div>
-                <div class="action-item"><div class="action-number">3</div><div><strong>「開始」<strong>で今すぐを選択</div></div>
-                <div class="action-item"><div class="action-number">4</div><div><strong>「サービス提供日」</strong>は<strong>14日</strong>に設定</div></div>
-                <div class="warning"><span class="warning-icon">⚠️</span>開始日とサービス提供日は必ず同じ日にしてください</div>
-                <div class="action-item"><div class="action-number">5</div><div><strong>自動引き落としをオンにする</strong></div></div>
+                <div class="action-item"><div class="action-number">1</div><div>請求書の支払い期限を<strong>「受け取り次第のお支払い」</strong>にする</div></div>
+                <div class="action-item"><div class="action-number">2</div><div>送信を<strong>「今すぐ」</strong>にする</div></div>
+                <div class="action-item"><div class="action-number">3</div><div>サービス提供日を本日施術なら<strong>【今日】</strong>、次回であれば<strong>【14日】</strong>に設定</div></div>
+                <div class="action-item"><div class="action-number">4</div><div><strong>自動引き落としをオンにする</strong></div></div>
             </div>
 
-            <!-- Step 9: 件名・メッセージ設定 (data-step="10") -->
+            <!-- Step 9 (旧8): ご利用開始日のご案内 -->
             <div class="step" data-step="10">
-                <div class="step-header">✏️ Step 9: 件名・メッセージ設定</div>
+                <div class="step-header">🗣️ Step 9: ご利用開始日のご案内</div>
+                <div class="case-box">
+                    <div class="case-header success">✅ ケース①：決済日と利用開始日が同じ場合</div>
+                    <p>例）7月1日にカード登録＆そのまま施術 → この日から利用スタート。</p>
+                    <div class="message-template">
+                        <strong>■お客様への説明（トーク例）</strong><br>
+                        「今月のサブスク代は本日カード決済させていただきます！
+2回目の自動引き落としが8/1で、3回目の自動引き落としが9/1となっています！サブスクは３ヶ月間で契約終了になるので、9/31までがサブスクの有効期間となります！計画的にご予約ください✨」
+                    </div>
+                </div>
+                <div class="case-box">
+                    <div class="case-header danger">⚠️ ケース②：決済日と利用開始日が異なる場合</div>
+                    <p>例）7月1日にカード登録のみ → 7月15日から施術スタート</p>
+                    <p class="note-strong">→「決済は済んでいるが、利用はまだできない」状態になるため、必ずご案内をお願いします。<br>また、２ヶ月目の請求書を編集する必要があります！！（→ Step 13参照）</p>
+                    <div class="message-template">
+                        <strong>■お客様への説明（トーク例）</strong><br>
+                        「今月分のサブスク代は本日カード決済にてお支払いいただくのですが、サブスクのご利用開始日は 7/15から になります！
+なので、次回ご予約は7/15以降にお願いします😊
+また。2回目の自動引き落とし日が8/15で3回目の自動引き落としが9/15となります！サブスク期間は３ヶ月間で契約終了になるので10/14までが有効期間となりますので、計画的にご予約ください✨」
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 10 (旧9): 件名・メッセージ設定 -->
+            <div class="step" data-step="11">
+                <div class="step-header">✏️ Step 10: 件名・メッセージ設定</div>
                 <div class="image-wrapper">
-                    <img src="IMG_0079.jpg" alt="Step 9: 件名・メッセージ設定の画面" class="manual-image">
+                    <img src="IMG_0079.jpg" alt="Step 10: 件名・メッセージ設定の画面" class="manual-image">
                 </div>
                 <div class="action-item"><div class="action-number">1</div><div><strong>「件名なし、任意の請求書IDなし」</strong>ボタンを押す</div></div>
                 <div class="action-item"><div class="action-number">2</div><div>請求書件名に：<strong>「自分の名前＋サブスク○○」</strong>を記載</div></div>
@@ -470,43 +235,85 @@
                 <div class="message-template"><strong>メッセージテンプレート：</strong><br><br>開始から3ヶ月後：○月○日まで有効。サブスクリプションは3ヶ月は解約することができません。3ヶ月後には自動で請求が止まるシステムになっております。クレジットカードの上限等により引き落とせない場合も見られるため、お気をつけください。</div>
             </div>
 
-            <!-- Step 10: プレビュー・送信 (data-step="11") -->
-            <div class="step" data-step="11">
-                <div class="step-header">📤 Step 10: プレビュー確認・送信</div>
+            <!-- Step 11 (旧10): プレビュー確認・送信 -->
+            <div class="step" data-step="12">
+                <div class="step-header">📤 Step 11: プレビュー確認・送信</div>
                 <div class="image-wrapper">
-                    <img src="IMG_0080.jpg" alt="Step 10: プレビュー・送信の画面" class="manual-image">
+                    <img src="IMG_0080.jpg" alt="Step 11: プレビュー・送信の画面" class="manual-image">
                 </div>
                 <div class="action-item"><div class="action-number">1</div><div><strong>「続行」</strong>をタップ</div></div>
                 <div class="action-item"><div class="action-number">2</div><div><strong>「プレビュー」</strong>をタップして内容を確認</div></div>
                 <div class="action-item"><div class="action-number">3</div><div>お客様情報・金額・件名・メッセージが正しいかチェック</div></div>
                 <div class="action-item"><div class="action-number">4</div><div>問題なければ<strong>「請求書を送信」</strong>をタップ</div></div>
             </div>
-
-            <!-- Step 11: お客様画面・支払い完了後 (data-step="12") -->
-            <div class="step" data-step="12">
-                <div class="step-header">📱 Step 11: お客様画面・支払い完了後</div>
+            
+            <!-- ▼▼▼ Step 12 (旧13): お客様画面・支払い完了後（修正済み） ▼▼▼ -->
+            <div class="step" data-step="13">
+                <div class="step-header">📱 Step 12: お客様画面・支払い完了後</div>
                 <div class="image-wrapper">
-                    <img src="IMG_4732 2.PNG" alt="Step 11: お客様の支払いフロー画面" class="manual-image" id="image-step9">
+                    <img src="IMG_4732 2.PNG" alt="Step 12: お客様の支払いフロー画面" class="manual-image" id="image-step9">
                 </div>
                 <div class="action-item"><div class="action-number">1</div><div><strong>メール通知</strong>：お客様に自動でメール通知が送信される</div></div>
-                <div class="action-item"><div class="action-number">2</div><div><strong>請求書画面</strong>：金額¥19,800、支払い期限、繰り返し設定が表示</div></div>
+                <div class="action-item"><div class="action-number">2</div><div><strong>請求書画面</strong>：支払い期限、繰り返し設定などを確認</div></div>
                 <div class="action-item"><div class="action-number">3</div><div><strong>支払い画面</strong>：お客様が「カードで支払う」をタップしてカード情報入力</div></div>
-                <div class="action-item"><div class="action-number">4</div><div><strong>完了画面</strong>：「支払われました」と表示、領収書がメール送信</div></div>
-                <div class="action-item"><div class="action-number">5</div><div>支払い完了後、請求書一覧でお客様名をタップしてメモを記入</div></div>
-                 <div class="warning"><span class="warning-icon">⚠️</span>必ず目の前でお客様にカード情報を入力してもらうのを見届けましょう。（）支払いをきちんとしてもらうため</div>
+                <div class="action-item">
+                    <div class="action-number">4</div>
+                    <div>
+                        「カード情報を保存」にチェックするようアナウンス<br>
+                        <strong style="color: var(--danger-color);">【自動引き落としにしていただきたいので、カード情報を保存のところにチェックしてもらえますか？】</strong>
+                    </div>
+                </div>
+                <div class="message-template">
+                    <strong>もし断られたら：</strong><br>
+                    「毎月クレジットカード情報を入れてもらうため手間がかかりますがよろしいですか？」と確認。<br>
+                    それでも断られたら、一旦「大丈夫です」と返答。
+                </div>
+                <div class="action-item"><div class="action-number">5</div><div><strong>完了画面</strong>：「支払われました」と表示、領収書がメール送信</div></div>
+                <div class="action-item"><div class="action-number">6</div><div>支払い完了後、請求書一覧でお客様名をタップしてメモを記入</div></div>
             </div>
 
-            <!-- Step 12: 緊急時対応 (data-step="13") -->
-            <div class="step" data-step="13">
-                <div class="step-header">🚨 Step 12: 緊急時対応・解約処理</div>
+            <!-- ▼▼▼ Step 13 (旧12): 請求書の編集方法（修正済み） ▼▼▼ -->
+            <div class="step" data-step="14">
+                <div class="step-header">📝 Step 13: 請求書の編集方法</div>
+                
+                <div class="case-box">
+                    <div class="case-header danger">⚠️【重要】この操作が必要な場合</div>
+                    <p><strong>Step 9のケース②（決済日と利用開始日が異なる）に該当する場合のみ</strong>、この請求書編集を行ってください。</p>
+                </div>
+
+                <div class="warning"><span class="warning-icon">💡</span>この作業はお客様が帰られてからでも良いので、落ち着いて行いましょう。</div>
+                
                 <div class="image-wrapper">
-                    <img src="IMG_0081.jpg" alt="Step 12: 緊急時対応の画面" class="manual-image">
+                    <img src="your-edit-screen-image.jpg" alt="請求書編集画面のスクリーンショット" class="manual-image">
+                </div>
+                <div class="action-item"><div class="action-number">1</div><div>下部の<strong>「請求書」</strong>タブをタップ</div></div>
+                <div class="action-item"><div class="action-number">2</div><div>該当お客様の来月の請求書【<strong style="color: var(--primary-color);">定期送信</strong>となっているもの】をタップ</div></div>
+                <div class="action-item"><div class="action-number">3</div><div>右画面を下にスクロールし、<strong>【定期請求書を表示】</strong>をタップ</div></div>
+                <div class="action-item"><div class="action-number">4</div><div>右上の<strong>「編集」</strong>をタップ</div></div>
+                <div class="action-item"><div class="action-number">5</div><div><strong>「次回請求書」</strong>をタップ</div></div>
+                <div class="action-item"><div class="action-number">6</div><div>支払い期限を<strong>「14日」</strong>にタップ</div></div>
+                <div class="action-item"><div class="action-number">7</div><div><strong>「サービス提供日」</strong>をタップし、送信日に変更</div></div>
+                <div class="action-item"><div class="action-number">8</div><div><strong>「続行」</strong>をタップ</div></div>
+                <div class="action-item"><div class="action-number">9</div><div><strong>「定期請求書を更新する」</strong>をタップして完了</div></div>
+            </div>
+
+            <!-- ▼▼▼ Step 14 (旧14): 緊急時対応（修正済み） ▼▼▼ -->
+            <div class="step" data-step="15">
+                <div class="step-header">🚨 Step 14: 緊急時対応</div>
+                <div class="image-wrapper">
+                    <img src="IMG_0081.jpg" alt="Step 14: 緊急時対応の画面" class="manual-image">
                 </div>
                 <div class="action-item"><div class="action-number">1</div><div><strong>支払い完了</strong>：お客様が支払うと<span class="status-paid">「支払済み」</span>が表示される</div></div>
                 <div class="action-item"><div class="action-number">2</div><div><strong>未払い確認</strong>：左上のフィルターを<strong>「期限超過」</strong>に設定</div></div>
                 <div class="action-item"><div class="action-number">3</div><div><strong>催促対応</strong>：<span class="status-overdue">赤文字で表示</span>された人は期限未払いのためLINEで催促</div></div>
                 <div class="action-item"><div class="action-number">4</div><div>催促後も反応がない場合は本部に連絡</div></div>
-                <div class="action-item"><div class="action-number">5</div><div><strong>解約・払い戻し</strong>：下部５項目の「その他」を選択→お取引→該当の決済をタップ→払い戻し→全ての商品を選択→次へ→理由を選択し払い戻し</div></div>
+                <div class="warning">
+                    <span class="warning-icon">⚠️</span>
+                    <strong>払い戻し・解約について</strong><br>
+                    <strong class="status-overdue">基本、解約と払い戻しは行いません。必ず先に本部に連絡してください。</strong><br><br>
+                    <small><strong>【参考】払い戻し操作（本部指示後）:</strong><br>
+                    下部「請求書タブ」→ 該当お客様 → 取引履歴 → 払い戻し → 全ての商品を選択 → 次へ → 理由を選択</small>
+                </div>
             </div>
             
         </main>
@@ -520,145 +327,28 @@
         </footer>
     </div>
 
-    <!-- ▼▼▼ 修正済みの完全なJavaScriptコード ▼▼▼ -->
     <script>
-        // === 定数と状態管理 ===
-        const state = {
-            currentStepIndex: 1,
-            totalSteps: 13, // 目次(1) + Step1〜12(12) = 13ステップ
-            get actualTotalSteps() { return this.totalSteps - 1; }, // 目次を除いた実質ステップ数 (12)
-            get isToc() { return this.currentStepIndex === 1; },
-            get isLastStep() { return this.currentStepIndex === this.totalSteps; }
-        };
-
+        const state = { currentStepIndex: 1, totalSteps: 15, get actualTotalSteps() { return this.totalSteps - 1; }, get isToc() { return this.currentStepIndex === 1; }, get isLastStep() { return this.currentStepIndex === this.totalSteps; } };
         const LOCAL_STORAGE_KEY = 'manualProgress';
-
-        // === DOM要素の取得 ===
-        const elements = {
-            steps: document.querySelectorAll('.step'),
-            progressBar: document.querySelector('.progress-bar'),
-            homeButton: document.querySelector('.home-button'),
-            prevBtn: document.getElementById('prevBtn'),
-            nextBtn: document.getElementById('nextBtn'),
-            stepIndicator: document.getElementById('currentStepIndicator')
-        };
-        
-        // === UI更新関数群 ===
-        function showCurrentStep() {
-            elements.steps.forEach(step => {
-                step.classList.toggle('active', parseInt(step.dataset.step) === state.currentStepIndex);
-            });
-        }
-        
-        function updateNavigation() {
-            elements.prevBtn.disabled = state.isToc;
-
-            if (state.isLastStep) {
-                elements.nextBtn.textContent = '完了 ✅';
-            } else if (state.isToc) {
-                elements.nextBtn.textContent = '開始 →';
-            } else {
-                elements.nextBtn.textContent = '次へ →';
-            }
-        }
-        
-        function updateStepIndicator() {
-            if (state.isToc) {
-                elements.stepIndicator.textContent = '目次';
-            } else {
-                // Step 1から始まる表示に修正
-                const currentDisplayStep = state.currentStepIndex - 1; // 2 -> 1, 3 -> 2...
-                elements.stepIndicator.textContent = `Step ${currentDisplayStep} / ${state.actualTotalSteps}`;
-            }
-        }
-
-        function updateProgressBar() {
-            const progress = state.isToc ? 0 : ((state.currentStepIndex - 1) / state.actualTotalSteps) * 100;
-            elements.progressBar.style.width = progress + '%';
-        }
-        
-        function updateHomeButtonVisibility() {
-            elements.homeButton.style.display = state.isToc ? 'none' : 'block';
-        }
-
-        function updateUI() {
-            showCurrentStep();
-            updateNavigation();
-            updateStepIndicator();
-            updateProgressBar();
-            updateHomeButtonVisibility();
-            window.scrollTo(0, 0);
-        }
-
-        // === イベントハンドラとロジック ===
-        function nextStep() {
-            if (state.isLastStep) {
-                goToHome();
-            } else {
-                state.currentStepIndex++;
-                updateAndSave();
-            }
-        }
-        
-        function previousStep() {
-            if (!state.isToc) {
-                state.currentStepIndex--;
-                updateAndSave();
-            }
-        }
-        
-        function jumpToStep(stepNumber) {
-            if (stepNumber >= 1 && stepNumber <= state.totalSteps) {
-                state.currentStepIndex = stepNumber;
-                updateAndSave();
-            }
-        }
-        
-        function goToHome() {
-            state.currentStepIndex = 1;
-            updateAndSave();
-        }
-
-        function updateAndSave() {
-            updateUI();
-            saveProgress();
-        }
-
-        // === 進捗の保存と復元 ===
-        function saveProgress() {
-            localStorage.setItem(LOCAL_STORAGE_KEY, state.currentStepIndex);
-        }
-        
-        function loadProgress() {
-            const savedStep = localStorage.getItem(LOCAL_STORAGE_KEY);
-            if (savedStep && parseInt(savedStep, 10) > 1) {
-                state.currentStepIndex = parseInt(savedStep, 10);
-            }
-        }
-
-        // === イベントリスナー ===
-        document.addEventListener('keydown', (e) => {
-            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
-            if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); nextStep(); } 
-            else if (e.key === 'ArrowLeft') { e.preventDefault(); previousStep(); } 
-            else if (e.key === 'Home' || e.key === 'h') { e.preventDefault(); goToHome(); }
-        });
-        
+        const elements = { steps: document.querySelectorAll('.step'), progressBar: document.querySelector('.progress-bar'), homeButton: document.querySelector('.home-button'), prevBtn: document.getElementById('prevBtn'), nextBtn: document.getElementById('nextBtn'), stepIndicator: document.getElementById('currentStepIndicator') };
+        function showCurrentStep() { elements.steps.forEach(step => { step.classList.toggle('active', parseInt(step.dataset.step) === state.currentStepIndex); }); }
+        function updateNavigation() { elements.prevBtn.disabled = state.isToc; if (state.isLastStep) { elements.nextBtn.textContent = '完了 ✅'; } else if (state.isToc) { elements.nextBtn.textContent = '開始 →'; } else { elements.nextBtn.textContent = '次へ →'; } }
+        function updateStepIndicator() { if (state.isToc) { elements.stepIndicator.textContent = '目次'; } else { const currentDisplayStep = state.currentStepIndex - 1; elements.stepIndicator.textContent = `Step ${currentDisplayStep} / ${state.actualTotalSteps}`; } }
+        function updateProgressBar() { const progress = state.isToc ? 0 : ((state.currentStepIndex - 1) / state.actualTotalSteps) * 100; elements.progressBar.style.width = progress + '%'; }
+        function updateHomeButtonVisibility() { elements.homeButton.style.display = state.isToc ? 'none' : 'block'; }
+        function updateUI() { showCurrentStep(); updateNavigation(); updateStepIndicator(); updateProgressBar(); updateHomeButtonVisibility(); window.scrollTo(0, 0); }
+        function nextStep() { if (state.isLastStep) { goToHome(); } else { state.currentStepIndex++; updateAndSave(); } }
+        function previousStep() { if (!state.isToc) { state.currentStepIndex--; updateAndSave(); } }
+        function jumpToStep(stepNumber) { if (stepNumber >= 1 && stepNumber <= state.totalSteps) { state.currentStepIndex = stepNumber; updateAndSave(); } }
+        function goToHome() { state.currentStepIndex = 1; updateAndSave(); }
+        function updateAndSave() { updateUI(); saveProgress(); }
+        function saveProgress() { localStorage.setItem(LOCAL_STORAGE_KEY, state.currentStepIndex); }
+        function loadProgress() { const savedStep = localStorage.getItem(LOCAL_STORAGE_KEY); if (savedStep && parseInt(savedStep, 10) > 1) { state.currentStepIndex = parseInt(savedStep, 10); } }
+        document.addEventListener('keydown', (e) => { if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return; if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); nextStep(); } else if (e.key === 'ArrowLeft') { e.preventDefault(); previousStep(); } else if (e.key === 'Home' || e.key === 'h') { e.preventDefault(); goToHome(); } });
         let touchStartX = 0;
         document.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; });
-        document.addEventListener('touchend', e => {
-            const touchEndX = e.changedTouches[0].screenX;
-            const threshold = 50;
-            if (touchEndX < touchStartX - threshold) { nextStep(); }
-            if (touchEndX > touchStartX + threshold) { previousStep(); }
-        });
-        
-        // === 初期化処理 ===
-        function initialize() {
-            loadProgress();
-            updateUI();
-        }
-
+        document.addEventListener('touchend', e => { const touchEndX = e.changedTouches[0].screenX; const threshold = 50; if (touchEndX < touchStartX - threshold) { nextStep(); } if (touchEndX > touchStartX + threshold) { previousStep(); } });
+        function initialize() { loadProgress(); updateUI(); }
         initialize();
     </script>
 </body>
