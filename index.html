@@ -117,7 +117,7 @@
             <div class="step" data-step="3">
                 <div class="step-header">📱 Step 2: アプリのダウンロード</div>
                 <div class="image-wrapper">
-                    <img src="IMG_0083.jpg" alt="ダウンロードするアプリのアイコン" class="manual-image">
+                    <img src="your-app-icon-image.jpg" alt="ダウンロードするアプリのアイコン" class="manual-image">
                 </div>
                 <div class="action-item"><div class="action-number">1</div><div>App Store／Google Playを開き、「スクエア」で検索</div></div>
                 <div class="action-item"><div class="action-number">2</div><div>上記画像のアプリをダウンロード</div></div>
@@ -247,7 +247,7 @@
                 <div class="action-item"><div class="action-number">4</div><div>問題なければ<strong>「請求書を送信」</strong>をタップ</div></div>
             </div>
             
-            <!-- ▼▼▼ Step 12 (旧13): お客様画面・支払い完了後（修正済み） ▼▼▼ -->
+            <!-- Step 12: お客様画面・支払い完了後 -->
             <div class="step" data-step="13">
                 <div class="step-header">📱 Step 12: お客様画面・支払い完了後</div>
                 <div class="image-wrapper">
@@ -272,7 +272,7 @@
                 <div class="action-item"><div class="action-number">6</div><div>支払い完了後、請求書一覧でお客様名をタップしてメモを記入</div></div>
             </div>
 
-            <!-- ▼▼▼ Step 13 (旧12): 請求書の編集方法（修正済み） ▼▼▼ -->
+            <!-- Step 13: 請求書の編集方法 -->
             <div class="step" data-step="14">
                 <div class="step-header">📝 Step 13: 請求書の編集方法</div>
                 
@@ -284,7 +284,7 @@
                 <div class="warning"><span class="warning-icon">💡</span>この作業はお客様が帰られてからでも良いので、落ち着いて行いましょう。</div>
                 
                 <div class="image-wrapper">
-                    <img src="IMG_0082.jpg" alt="請求書編集画面のスクリーンショット" class="manual-image">
+                    <img src="your-edit-screen-image.jpg" alt="請求書編集画面のスクリーンショット" class="manual-image">
                 </div>
                 <div class="action-item"><div class="action-number">1</div><div>下部の<strong>「請求書」</strong>タブをタップ</div></div>
                 <div class="action-item"><div class="action-number">2</div><div>該当お客様の来月の請求書【<strong style="color: var(--primary-color);">定期送信</strong>となっているもの】をタップ</div></div>
@@ -297,7 +297,7 @@
                 <div class="action-item"><div class="action-number">9</div><div><strong>「定期請求書を更新する」</strong>をタップして完了</div></div>
             </div>
 
-            <!-- ▼▼▼ Step 14 (旧14): 緊急時対応（修正済み） ▼▼▼ -->
+            <!-- Step 14: 緊急時対応 -->
             <div class="step" data-step="15">
                 <div class="step-header">🚨 Step 14: 緊急時対応</div>
                 <div class="image-wrapper">
@@ -344,10 +344,27 @@
         function updateAndSave() { updateUI(); saveProgress(); }
         function saveProgress() { localStorage.setItem(LOCAL_STORAGE_KEY, state.currentStepIndex); }
         function loadProgress() { const savedStep = localStorage.getItem(LOCAL_STORAGE_KEY); if (savedStep && parseInt(savedStep, 10) > 1) { state.currentStepIndex = parseInt(savedStep, 10); } }
-        document.addEventListener('keydown', (e) => { if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return; if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); nextStep(); } else if (e.key === 'ArrowLeft') { e.preventDefault(); previousStep(); } else if (e.key === 'Home' || e.key === 'h') { e.preventDefault(); goToHome(); } });
+        
+        // ▼▼▼ 修正箇所：スワイプとキーボード操作によるページ送りを無効化 ▼▼▼
+        /*
+        document.addEventListener('keydown', (e) => {
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+            if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); nextStep(); } 
+            else if (e.key === 'ArrowLeft') { e.preventDefault(); previousStep(); } 
+            else if (e.key === 'Home' || e.key === 'h') { e.preventDefault(); goToHome(); }
+        });
+        
         let touchStartX = 0;
         document.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; });
-        document.addEventListener('touchend', e => { const touchEndX = e.changedTouches[0].screenX; const threshold = 50; if (touchEndX < touchStartX - threshold) { nextStep(); } if (touchEndX > touchStartX + threshold) { previousStep(); } });
+        document.addEventListener('touchend', e => {
+            const touchEndX = e.changedTouches[0].screenX;
+            const threshold = 50;
+            if (touchEndX < touchStartX - threshold) { nextStep(); }
+            if (touchEndX > touchStartX + threshold) { previousStep(); }
+        });
+        */
+        // ▲▲▲ ここまで ▲▲▲
+
         function initialize() { loadProgress(); updateUI(); }
         initialize();
     </script>
