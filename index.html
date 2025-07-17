@@ -91,8 +91,8 @@
                     <div class="toc-item" onclick="jumpToStep(8)"><div class="toc-number">7</div><div class="toc-title">定期送信設定</div></div>
                     <div class="toc-item" onclick="jumpToStep(9)"><div class="toc-number">8</div><div class="toc-title">請求設定</div></div>
                     <div class="toc-item" onclick="jumpToStep(10)"><div class="toc-number">9</div><div class="toc-title">契約開始日とトーク例</div></div>
-                    <div class="toc-item" onclick="jumpToStep(11)"><div class="toc-number">10</div><div class="toc-title">メッセージテンプレート設定</div></div>
-                    <div class="toc-item" onclick="jumpToStep(12)"><div class="toc-number">11</div><div class="toc-title">送信前の確認と送信</div></div>
+                    <div class="toc-item" onclick="jumpToStep(11)"><div class="toc-number">10</div><div class="toc-title">件名・メッセージ設定</div></div>
+                    <div class="toc-item" onclick="jumpToStep(12)"><div class="toc-number">11</div><div class="toc-title">プレビュー確認・送信</div></div>
                     <div class="toc-item" onclick="jumpToStep(13)"><div class="toc-number">12</div><div class="toc-title">お客様画面・支払い完了後</div></div>
                     <div class="toc-item" onclick="jumpToStep(14)"><div class="toc-number">13</div><div class="toc-title">請求書の編集方法</div></div>
                     <div class="toc-item" onclick="jumpToStep(15)"><div class="toc-number">⚠️</div><div class="toc-title">緊急時対応・解約処理</div></div>
@@ -127,8 +127,9 @@
             <!-- Step 3: 商品の追加 -->
             <div class="step" data-step="4">
                 <div class="step-header">✨ Step 3: 商品の追加</div>
-                <div class="action-item"><div class="action-number">1</div><div>その他タブで<strong>「商品」</strong>をタップ</div></div>
-                <div class="action-item"><div class="action-number">2</div><div><strong>画面右上で「商品を登録」</strong>をタップ</div></div>
+                 <div class="warning"><span class="warning-icon">💡</span>この作業は初回のみ必要です。一度登録すれば、その後は不要です。</div>
+                <div class="action-item"><div class="action-number">1</div><div>お会計タブで<strong>「商品」</strong>をタップ</div></div>
+                <div class="action-item"><div class="action-number">2</div><div><strong>「新規商品を登録する」</strong>をタップ</div></div>
                 <div class="action-item"><div class="action-number">3</div><div><strong>「POSレジスタイル」</strong>を選択</div></div>
                 <div class="action-item"><div class="action-number">4</div><div><strong>「ライブラリから選択」</strong>をタップ</div></div>
                 <div class="action-item"><div class="action-number">5</div><div>該当の写真をアップロードまたは選択</div></div>
@@ -140,7 +141,6 @@
                 <div class="action-item"><div class="action-number">6</div><div>名前欄にサブスク名を入力（例：サブスクリプション プレミアム会員）</div></div>
                 <div class="action-item"><div class="action-number">7</div><div>説明欄に商品説明を入力（公式LINEの文例を参考に）</div></div>
                 <div class="action-item"><div class="action-number">8</div><div>価格を入力</div></div>
-                <div class="warning"><span class="warning-icon">💡</span>この作業は一度登録すれば、その後は不要です。</div>
             </div>
 
             <!-- Step 4: 請求書の作成 -->
@@ -159,9 +159,11 @@
                 <div class="image-wrapper">
                     <img src="IMG_0074.jpg" alt="Step 5: 顧客情報を追加の画面" class="manual-image">
                 </div>
-                <div class="action-item"><div class="action-number">1</div><div><strong>「顧客情報を追加」</strong>をタップ</div></div>
+                <div class="action-item"><div class="action-number">1</div><div><strong style="color: var(--primary-color);">「顧客情報を追加」</strong>をタップ</div></div>
                 <div class="action-item"><div class="action-number">2</div><div>右上の<strong>「顧客情報を作成」</strong>をタップ</div></div>
-                <div class="action-item" style="background: transparent; border: none; padding-left: 0;"><div class="action-number" style="background: transparent;"></div><div>※すでに登録されている顧客がいる場合は、検索して選択</div></div>
+                <div class="message-template" style="margin-top: -4px; margin-bottom: 12px; font-size: 13px;">
+                    ※すでに登録済みの顧客がいる場合は、検索して選択してください。
+                </div>
                 <div class="action-item"><div class="action-number">3</div><div>お客様に<strong>姓名、電話番号、メールアドレス</strong>を正確に入力してもらう</div></div>
                 <div class="action-item"><div class="action-number">4</div><div>入力完了後、<strong>「保存」</strong>をタップする</div></div>
             </div>
@@ -173,8 +175,7 @@
                     <img src="IMG_0075.jpg" alt="Step 6: 商品選択の画面" class="manual-image">
                 </div>
                 <div class="action-item"><div class="action-number">1</div><div><strong style="color: var(--primary-color);">「商品またはディスカウントを追加」</strong>をタップ</div></div>
-                <div class="action-item"><div class="action-number">2</div><div><strong>「すべての商品とサービス」</strong>をタップ</div></div>
-                <div class="action-item"><div class="action-number">3</div><div>該当する<strong>サブスクリプション</strong>を選択してタップ</div></div>
+                <div class="action-item"><div class="action-number">2</div><div><strong>「すべての商品とサービス」</strong>から該当する<strong>サブスクリプション</strong>を選ぶ</div></div>
             </div>
 
             <!-- Step 7: 定期送信設定 -->
@@ -184,17 +185,15 @@
                     <img src="IMG_0076.jpg" alt="Step 7: 定期送信設定の画面" class="manual-image">
                 </div>
                 <div class="action-item"><div class="action-number">1</div><div><strong style="color: var(--primary-color);">「この請求書を定期送信にする」</strong>をタップ → 「定期送信」をタップ</div></div>
-                <div class="action-item"><div class="action-number">2</div><div>オプション設定画面が表示されたら「繰り返し」を<strong>「1月ごと」</strong>に設定</div></div>
-                <div class="action-item"><div class="action-number">3</div><div><strong>「終了設定」</strong>をタップ</div></div>
-                <div class="action-item"><div class="action-number">4</div><div><strong>「#回の請求後」</strong>をタップ</div></div>
-                <div class="action-item"><div class="action-number">5</div><div>回数を設定（例：3ヶ月なら「3」をタップ）</div></div>
+                <div class="action-item"><div class="action-number">2</div><div>繰り返しが<strong>「1ヶ月ごと」</strong>になっているか確認</div></div>
+                <div class="action-item"><div class="action-number">3</div><div>終了設定：一番下の<strong>「#回の請求後」</strong>を押して<strong>「3」</strong>に設定</div></div>
                  <div class="warning">
                     <span class="warning-icon">⚠️</span>
                     <strong>終了設定のルール</strong><br>
                     直営店スタッフは<strong>「3ヶ月」</strong>を設定してください。<br>
                     加盟店は、オーナーまたは担当SVから指示された期間（例：◯ヶ月、または無期限）に設定してください。
                 </div>
-                <div class="action-item"><div class="action-number">6</div><div>左上の矢印で「×マーク」に変わるまで戻る</div></div>
+                <div class="action-item"><div class="action-number">4</div><div>左上の矢印で「×マーク」に変わるまで戻る</div></div>
             </div>
 
             <!-- Step 8: 請求設定 -->
@@ -203,25 +202,23 @@
                 <div class="image-wrapper">
                     <img src="IMG_0078.jpg" alt="Step 8: 開始日設定の画面" class="manual-image">
                 </div>
-                <div class="action-item"><div class="action-number">1</div><div><strong>「請求書の支払い期限」</strong>をタップ</div></div>
-                <div class="action-item"><div class="action-number">2</div><div><strong style="color: var(--primary-color);">「受取次第のお支払い」</strong>をタップ</div></div>
+                <div class="action-item"><div class="action-number">1</div><div>請求書の支払い期限を<strong>「受け取り次第のお支払い」</strong>にする</div></div>
                 <div class="message-template" style="margin-top: -4px; margin-bottom: 12px; font-size: 13px;">
                     <strong>※補足:</strong> この設定により、請求メールを受け取った時点でお支払いが発生します。支払確認と契約確定を同時に行うための重要なステップですので、トラブル防止のため必須です。
                 </div>
-                <div class="action-item"><div class="action-number">3</div><div>左上の矢印で戻る</div></div>
-                <div class="action-item"><div class="action-number">4</div><div><strong>「開始」</strong>をタップ</div></div>
-                <div class="action-item"><div class="action-number">5</div><div><strong style="color: var(--primary-color);">「今すぐ」</strong>をタップ</div></div>
+                <div class="action-item"><div class="action-number">2</div><div>送信を<strong>「今すぐ」</strong>にする</div></div>
                  <div class="message-template" style="margin-top: -4px; margin-bottom: 12px; font-size: 13px;">
                     <strong>※補足:</strong> 「開始」を「今すぐ」に設定すると、その場で請求メールが送信されます。お客様への即時送付を意図しているため、「今すぐ」の選択が必要です。
                 </div>
-                <div class="action-item"><div class="action-number">6</div><div>左上の矢印で戻る</div></div>
+                <div class="action-item"><div class="action-number">3</div><div>左上の矢印で戻る</div></div>
             </div>
 
             <!-- Step 9: 契約開始日とトーク例 -->
             <div class="step" data-step="10">
                 <div class="step-header">🗣️ Step 9: 契約開始日とトーク例</div>
-                <div class="action-item"><div class="action-number">1</div><div>サービス提供日を設定（例：今日施術→<strong>「今日」</strong>、次回来店→<strong>「14日」</strong>など）</div></div>
+                <div class="action-item"><div class="action-number">1</div><div>サービス提供日を入力（例：今日施術→<strong>「今日」</strong>、次回来店→<strong>「14日」</strong>など）</div></div>
                 <div class="action-item"><div class="action-number">2</div><div><strong>「自動引き落とし」</strong>をオンにする</div></div>
+                <div class="action-item"><div class="action-number">3</div><div>左上の矢印をタップして戻る</div></div>
 
                 <div class="case-box">
                     <div class="case-header success">✅ ケース①：来店日が契約開始日の場合（例: 7/1来店＆当日開始）</div>
@@ -232,28 +229,26 @@
                 </div>
                 <div class="case-box">
                     <div class="case-header danger">⚠️ ケース②：来店日と契約開始日が異なる場合（例: 7/1来店、7/15スタート）</div>
-                    <p class="note-strong">→「決済は済んでいるが、利用はまだできない」状態になるため、必ずご案内をお願いします。<br>また、２ヶ月目の請求書を編集する必要があります！！（→ Step 13参照）</p>
-                    <div class="message-template">
+                     <div class="message-template">
                         <strong>【お客様向けトーク例】</strong><br>
                         「今月分のサブスク代は本日カード決済でお支払いいただきます。ご利用開始日は7/15なので、次回のご予約は7/15以降でお願いします！8/15に2回目、9/15に3回目の引き落としが行われます！」
                     </div>
                 </div>
             </div>
 
-            <!-- Step 10: メッセージテンプレート設定 -->
+            <!-- Step 10: 件名・メッセージ設定 -->
             <div class="step" data-step="11">
-                <div class="step-header">✏️ Step 10: メッセージテンプレート設定</div>
+                <div class="step-header">✏️ Step 10: 件名・メッセージ設定</div>
                 <div class="action-item"><div class="action-number">1</div><div>一番下までスクロールし、<strong style="color: var(--primary-color);">「件名なし、任意の請求書IDなし」</strong>をタップ</div></div>
                 <div class="action-item"><div class="action-number">2</div><div>請求書件名に：<strong>「自分の名前＋サブスク○○」</strong>を記載</div></div>
                 <div class="action-item"><div class="action-number">3</div><div>契約の終了設定に応じて、以下のメッセージをメッセージ欄に記載</div></div>
+                <div class="action-item"><div class="action-number">4</div><div>右上の<strong>「保存」</strong>をタップ</div></div>
 
                 <div class="case-box" style="padding-top: 10px;">
                     <div class="case-header" style="border: none; padding-bottom: 4px;">● 期限設定あり（例: 3ヶ月）の場合</div>
                     <div class="message-template">
                         <strong>メッセージテンプレート：</strong><br><br>
-                        開始日から3ヶ月後の○月○日までが有効期間です。<br>
-                        この期間中は解約できず、3ヶ月後に自動的に請求が終了します。<br>
-                        ※クレジットカードの上限などで決済できないケースもあるためご注意ください。
+                        開始日から3ヶ月後の○月○日までが有効期間です。この期間中は解約できず、3ヶ月後に自動的に請求が終了します。
                     </div>
                 </div>
 
@@ -261,16 +256,14 @@
                     <div class="case-header" style="border: none; padding-bottom: 4px;">● 期限設定なしの場合</div>
                     <div class="message-template">
                         <strong>メッセージテンプレート：</strong><br><br>
-                        サブスクは3ヶ月間解約できません。<br>
-                        解約希望の際は公式LINEや直接ご連絡ください。<br>
-                        ※カード上限などにより引き落としエラーが発生する可能性もあるためご注意ください。
+                        サブスクは3ヶ月間解約できません。解約希望の際は公式LINEや直接ご連絡ください。
                     </div>
                 </div>
             </div>
 
-            <!-- Step 11: 送信前の確認と送信 -->
+            <!-- Step 11: プレビュー確認・送信 -->
             <div class="step" data-step="12">
-                <div class="step-header">📤 Step 11: 送信前の確認と送信</div>
+                <div class="step-header">📤 Step 11: プレビュー確認・送信</div>
                 <div class="image-wrapper">
                     <img src="IMG_0080.jpg" alt="Step 11: プレビュー・送信の画面" class="manual-image">
                 </div>
@@ -310,23 +303,32 @@
                 
                 <div class="case-box">
                     <div class="case-header danger">⚠️【重要】この操作が必要な場合</div>
-                    <p><strong>Step 9のケース②（決済日と利用開始日が異なる）に該当する場合のみ</strong>、この請求書編集を行ってください。</p>
+                    <p><strong>Step 9のケース②（来店日と契約開始日が異なる）に該当する場合のみ</strong>、この請求書編集を行ってください。</p>
                 </div>
-
-                <div class="warning"><span class="warning-icon">💡</span>この作業はお客様が帰られてからでも良いので、落ち着いて行いましょう。</div>
                 
-                <div class="image-wrapper">
-                    <img src="IMG_0082.jpg" alt="請求書編集画面のスクリーンショット" class="manual-image">
-                </div>
+                <div class="warning"><span class="warning-icon">💡</span>定期請求書を更新すると、すでに支払った初月分の請求も再発行されてしまうため、そのキャンセル手続きまで行います。</div>
+
+                <p style="font-weight: bold; margin: 16px 0;">【A】定期請求書の編集</p>
                 <div class="action-item"><div class="action-number">1</div><div>下部の<strong>「請求書」</strong>タブをタップ</div></div>
-                <div class="action-item"><div class="action-number">2</div><div>該当お客様の来月の請求書【<strong style="color: var(--primary-color);">定期送信</strong>となっているもの】をタップ</div></div>
+                <div class="action-item"><div class="action-number">2</div><div>該当お客様の来月の請求書【<strong style="color: var(--primary-color);">定期送信</strong>】となっているものをタップ</div></div>
                 <div class="action-item"><div class="action-number">3</div><div>右画面を下にスクロールし、<strong>【定期請求書を表示】</strong>をタップ</div></div>
                 <div class="action-item"><div class="action-number">4</div><div>右上の<strong>「編集」</strong>をタップ</div></div>
                 <div class="action-item"><div class="action-number">5</div><div><strong>「次回請求書」</strong>をタップ</div></div>
                 <div class="action-item"><div class="action-number">6</div><div>支払い期限を<strong>「14日」</strong>にタップ</div></div>
                 <div class="action-item"><div class="action-number">7</div><div><strong>「サービス提供日」</strong>をタップし、送信日に変更</div></div>
                 <div class="action-item"><div class="action-number">8</div><div><strong>「続行」</strong>をタップ</div></div>
-                <div class="action-item"><div class="action-number">9</div><div><strong>「定期請求書を更新する」</strong>をタップして完了</div></div>
+                <div class="action-item"><div class="action-number">9</div><div><strong>「定期請求書を更新する」</strong>をタップ</div></div>
+
+                <p style="font-weight: bold; margin: 24px 0 16px;">【B】不要な再発行請求のキャンセル</p>
+                <div class="action-item"><div class="action-number">10</div><div>左上の<strong>「フィルター」</strong>をタップ</div></div>
+                <div class="action-item"><div class="action-number">11</div><div><strong>「送信予約済み」</strong>をタップし、右上の<strong>「保存」</strong>をタップ</div></div>
+                <div class="action-item"><div class="action-number">12</div><div>支払日（今日）からちょうど14日後の定期請求書をタップ</div></div>
+                <div class="action-item"><div class="action-number">13</div><div><strong style="color: var(--primary-color);">【定期請求書をキャンセルする】</strong>をタップ</div></div>
+                <div class="action-item"><div class="action-number">14</div><div><strong>「受取先に通知」</strong>をオフに設定</div></div>
+                 <div class="message-template" style="margin-top: -4px; margin-bottom: 12px; font-size: 13px;">
+                    ※お客様に不要なキャンセル通知が届き、誤解を与えるのを避けるためです。
+                </div>
+                <div class="action-item"><div class="action-number">15</div><div><strong>「定期請求書をキャンセルする」</strong>をタップして完了</div></div>
             </div>
 
             <!-- Step 14: 緊急時対応 -->
@@ -335,10 +337,9 @@
                 <div class="image-wrapper">
                     <img src="IMG_0081.jpg" alt="Step 14: 緊急時対応の画面" class="manual-image">
                 </div>
-                <div class="action-item"><div class="action-number">1</div><div><strong>支払い完了</strong>：お客様が支払うと<span class="status-paid">「支払済み」</span>が表示される</div></div>
-                <div class="action-item"><div class="action-number">2</div><div><strong>未払い確認</strong>：左上のフィルターを<strong>「期限超過」</strong>に設定</div></div>
-                <div class="action-item"><div class="action-number">3</div><div><strong>催促対応</strong>：<span class="status-overdue">赤文字で表示</span>された人は期限未払いのためLINEで催促</div></div>
-                <div class="action-item"><div class="action-number">4</div><div>催促後も反応がない場合は本部に連絡</div></div>
+                <div class="action-item"><div class="action-number">1</div><div><strong>未払い確認</strong>：左上のフィルターを<strong>「期限超過」</strong>に設定</div></div>
+                <div class="action-item"><div class="action-number">2</div><div><strong>催促対応</strong>：<span class="status-overdue">赤文字で表示</span>された人は期限未払いのためLINEで催促</div></div>
+                <div class="action-item"><div class="action-number">3</div><div>催促後も反応がない場合は本部に連絡</div></div>
                 <div class="warning">
                     <span class="warning-icon">⚠️</span>
                     <strong>払い戻し・解約について</strong><br>
@@ -377,8 +378,6 @@
         function saveProgress() { localStorage.setItem(LOCAL_STORAGE_KEY, state.currentStepIndex); }
         function loadProgress() { const savedStep = localStorage.getItem(LOCAL_STORAGE_KEY); if (savedStep && parseInt(savedStep, 10) > 1) { state.currentStepIndex = parseInt(savedStep, 10); } }
         
-        // ▼▼▼ 修正箇所：スワイプとキーボード操作によるページ送りを無効化 ▼▼▼
-        /*
         document.addEventListener('keydown', (e) => {
             if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
             if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); nextStep(); } 
@@ -387,15 +386,13 @@
         });
         
         let touchStartX = 0;
-        document.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; });
+        document.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
         document.addEventListener('touchend', e => {
             const touchEndX = e.changedTouches[0].screenX;
             const threshold = 50;
             if (touchEndX < touchStartX - threshold) { nextStep(); }
             if (touchEndX > touchStartX + threshold) { previousStep(); }
-        });
-        */
-        // ▲▲▲ ここまで ▲▲▲
+        }, { passive: true });
 
         function initialize() { loadProgress(); updateUI(); }
         initialize();
