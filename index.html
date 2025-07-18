@@ -58,6 +58,7 @@
         .status-paid { color: var(--success-color); font-weight: bold; }
         .status-overdue { color: var(--danger-color); font-weight: bold; }
         strong { font-weight: bold; color: var(--text-dark); }
+        ul { list-style-position: inside; padding-left: 10px; line-height: 1.8; }
         footer.navigation { position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); max-width: 414px; width: 100%; background: var(--white); padding: 16px 20px 20px; box-shadow: 0 -2px 10px rgba(0,0,0,0.1); display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color); z-index: 900; }
         .nav-btn { background: var(--primary-color); color: var(--white); border: none; padding: 12px 24px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: all 0.3s ease; }
         .nav-btn:hover { background: var(--primary-color-hover); }
@@ -82,7 +83,7 @@
             <div class="step active" data-step="1">
                 <div class="table-of-contents">
                     <div class="toc-header">📋 目次</div>
-                    <div class="toc-item" onclick="jumpToStep(2)"><div class="toc-number">1</div><div class="toc-title">契約期間の設定について</div></div>
+                    <div class="toc-item" onclick="jumpToStep(2)"><div class="toc-number">1</div><div class="toc-title">契約期間のルールについて</div></div>
                     <div class="toc-item" onclick="jumpToStep(3)"><div class="toc-number">2</div><div class="toc-title">アプリのダウンロードとログイン</div></div>
                     <div class="toc-item" onclick="jumpToStep(4)"><div class="toc-number">3</div><div class="toc-title">商品の追加</div></div>
                     <div class="toc-item" onclick="jumpToStep(5)"><div class="toc-number">4</div><div class="toc-title">請求書の作成</div></div>
@@ -99,16 +100,33 @@
                 </div>
             </div>
 
-            <!-- Step 1: 契約期間の設定について -->
+            <!-- Step 1: 契約期間のルールについて -->
             <div class="step" data-step="2">
-                <div class="step-header">📢 Step 1: 契約期間の設定について</div>
-                <div class="action-item"><div class="action-number">1</div><div>決済システムを<strong>スクエア</strong>に変更します。</div></div>
-                <div class="action-item"><div class="action-number">2</div><div>Squareでは契約期間を自由に設定できます。</div></div>
+                <div class="step-header">📢 Step 1: 契約期間のルールについて</div>
+                
+                <div class="case-box">
+                    <div class="case-header success">【直営店スタッフ】のルール</div>
+                    <ul>
+                        <li>契約期間は<strong>「3ヶ月固定・途中解約不可」</strong>です。</li>
+                        <li>契約締結から3ヶ月間は必ず継続され、期間満了と同時に契約終了となります（自動更新なし）。</li>
+                        <li>継続希望の場合は<strong>新たな契約を再度締結</strong>する必要があります。</li>
+                    </ul>
+                </div>
+
+                <div class="case-box">
+                    <div class="case-header">【加盟店スタッフ】のルール</div>
+                     <ul>
+                        <li>契約期間は、オーナーまたは担当SVに確認のうえ設定してください。（例：3ヶ月／6ヶ月／無期限など）。</li>
+                        <li>ただし、どの契約期間であっても<strong>「最低3ヶ月間は途中解約不可」</strong>となります。</li>
+                        <li>3ヶ月以降はお客様からの申し出があればいつでも解約可能です。</li>
+                        
+                    </ul>
+                </div>
+
                 <div class="warning">
-                    <span class="warning-icon">💡</span>
-                    <strong>契約期間のルール</strong><br>
-                    直営店スタッフは<strong>「3ヶ月契約」</strong>で固定です。<br>
-                    加盟店の場合は、オーナーまたは担当SVに「契約期間を何ヶ月にするか」「無期限にするか」を必ず確認してから設定してください。
+                    <span class="warning-icon">⚠️</span>
+                    <strong style="color: var(--danger-color);">【重要】</strong><br>
+                    加盟店の契約期間は必ず事前確認のうえ設定し、最低3ヶ月解約不可の原則を反映してください。
                 </div>
             </div>
 
