@@ -58,7 +58,8 @@
         .status-paid { color: var(--success-color); font-weight: bold; }
         .status-overdue { color: var(--danger-color); font-weight: bold; }
         strong { font-weight: bold; color: var(--text-dark); }
-        ul { list-style-position: inside; padding-left: 10px; line-height: 1.8; }
+        ul { list-style-position: inside; padding-left: 10px; line-height: 1.8; margin: 0; }
+        .case-box ul { padding-left: 5px; }
         footer.navigation { position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); max-width: 414px; width: 100%; background: var(--white); padding: 16px 20px 20px; box-shadow: 0 -2px 10px rgba(0,0,0,0.1); display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color); z-index: 900; }
         .nav-btn { background: var(--primary-color); color: var(--white); border: none; padding: 12px 24px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: all 0.3s ease; }
         .nav-btn:hover { background: var(--primary-color-hover); }
@@ -116,10 +117,10 @@
                 <div class="case-box">
                     <div class="case-header">【加盟店スタッフ】のルール</div>
                      <ul>
-                        <li>契約期間は、オーナーまたは担当SVに確認のうえ設定してください。（例：3ヶ月／6ヶ月／無期限など）。</li>
+                        <li>契約期間は、オーナーまたは担当SVに確認のうえ自由に設定可能です（例：3ヶ月／6ヶ月／無期限など）。</li>
                         <li>ただし、どの契約期間であっても<strong>「最低3ヶ月間は途中解約不可」</strong>となります。</li>
                         <li>3ヶ月以降はお客様からの申し出があればいつでも解約可能です。</li>
-                        
+                        <li>無期限契約の場合も、初回契約から3ヶ月間は解約できず、以降は自由解約となります。</li>
                     </ul>
                 </div>
 
@@ -218,7 +219,7 @@
             <div class="step" data-step="9">
                 <div class="step-header">📅 Step 8: 請求設定</div>
                 <div class="image-wrapper">
-                    <img src="IMG_0084.jpg" alt="Step 8: 開始日設定の画面" class="manual-image">
+                    <img src="IMG_0078.jpg" alt="Step 8: 開始日設定の画面" class="manual-image">
                 </div>
                 <div class="action-item"><div class="action-number">1</div><div>請求書の支払い期限を<strong>「受け取り次第のお支払い」</strong>にする</div></div>
                 <div class="message-template" style="margin-top: -4px; margin-bottom: 12px; font-size: 13px;">
@@ -234,23 +235,17 @@
             <!-- Step 9: 契約開始日とトーク例 -->
             <div class="step" data-step="10">
                 <div class="step-header">🗣️ Step 9: 契約開始日とトーク例</div>
-                <div class="action-item"><div class="action-number">1</div><div>サービス提供日を入力（例：今日施術→<strong>「今日」</strong>、次回来店→<strong>「14日」</strong>など）</div></div>
+                <div class="action-item"><div class="action-number">1</div><div>サービス提供日を<strong>「14日」</strong>に選択</div></div><div class="message-template" style="margin-top: -4px; margin-bottom: 12px; font-size: 13px;">
+                    ※契約日と施術日が一緒で、施術後にクーリングオフされると無料で施術したことになってしまう。サブスクの予約は契約してから14日後にしましょう。
+                </div>
                 <div class="action-item"><div class="action-number">2</div><div><strong>「自動引き落とし」</strong>をオンにする</div></div>
                 <div class="action-item"><div class="action-number">3</div><div>左上の矢印をタップして戻る</div></div>
 
                 <div class="case-box">
-                    <div class="case-header success">✅ ケース①：来店日が契約開始日の場合</div>
-                    <p style="font-size: 14px; margin-bottom: 8px;"><strong>【該当するお客様の例】</strong><br>・TAKETINからsquareに変更するお客様</p>
+                    <div class="case-header success">✅ ご案内とトーク例</div>
+                    <p style="font-size: 14px; margin-bottom: 8px;">
                      <div class="message-template">
-                        <strong>【お客様向けトーク例（7/1来店＆当日開始ver）】</strong><br>
-                        「今月のサブスク代は本日カード決済させていただきます！2回目は8/1、3回目は9/1に自動引き落としされます！」
-                    </div>
-                </div>
-                <div class="case-box">
-                    <div class="case-header danger">⚠️ ケース②：来店日と契約開始日が異なる場合</div>
-                    <p style="font-size: 14px; margin-bottom: 8px;"><strong>【該当するお客様の例】</strong><br>・新規クーポンで入ってサブスクで契約が取れたお客様</p>
-                     <div class="message-template">
-                        <strong>【お客様向けトーク例例:(7/1来店、7/15スタート)】</strong><br>
+                        <strong>【お客様向けトーク(例)7/1契約→7/15開始】</strong><br>
                         「今月分のサブスク代は本日カード決済でお支払いいただきます。ご利用開始日は7/15なので、次回のご予約は7/15以降でお願いします！8/15に2回目、9/15に3回目の引き落としが行われます！」
                     </div>
                 </div>
@@ -322,15 +317,14 @@
                 <div class="step-header">📝 Step 13: 請求書の編集方法</div>
                 
                 <div class="case-box">
-                    <div class="case-header danger">⚠️【重要】この操作が必要な場合</div>
-                    <p><strong>Step 9のケース②（来店日と契約開始日が異なる）に該当する場合のみ</strong>、この請求書編集を行ってください。</p>
+                    <div class="case-header danger">⚠️【重要】この操作は必ず行ってください</div>
                 </div>
                 
-                <div class="warning"><span class="warning-icon">💡</span>定期請求書を更新すると、すでに支払った初月分の請求も再発行されてしまうため、そのキャンセル手続きまで行います。</div>
+                <div class="warning"><span class="warning-icon">💡</span>定期請求書を更新すると、すでに支払った初月分の請求も再発行されてしまうため、そのキャンセル手続きまで行います。（キャンセル手続きをしないとお客様に３ヶ月以内に４回お支払することになってしまう。）</div>
 
                 <p style="font-weight: bold; margin: 16px 0;">【A】定期請求書の編集</p>
                 <div class="action-item"><div class="action-number">1</div><div>下部の<strong>「請求書」</strong>タブをタップ</div></div>
-                <div class="action-item"><div class="action-number">2</div><div>該当お客様の来月の請求書【<strong style="color: var(--primary-color);">定期送信</strong>】となっているものをタップ</div></div>
+                <div class="action-item"><div class="action-number">2</div><div>該当お客様の来月の請求書【<strong style="color: var(--primary-color);">定期送信</strong>となっているもの】をタップ</div></div>
                 <div class="action-item"><div class="action-number">3</div><div>右画面を下にスクロールし、<strong>【定期請求書を表示】</strong>をタップ</div></div>
                 <div class="action-item"><div class="action-number">4</div><div>右上の<strong>「編集」</strong>をタップ</div></div>
                 <div class="action-item"><div class="action-number">5</div><div><strong>「次回請求書」</strong>をタップ</div></div>
